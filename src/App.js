@@ -1,11 +1,11 @@
 
 import './scss/style.scss';
 //import './App.css';
-
+import './Component/Auth
 function App() {
   return (
-    <div className="c-app c-default-layout  align-items-center">
-  <h1>Hello</h1>    </div>
+    <div className="app">
+     <Auth />    </div>
   );
 }
 
