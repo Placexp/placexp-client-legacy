@@ -2,7 +2,7 @@ import React ,{Suspense}from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import Auth from './Pages/Auth'
+
 import reportWebVitals from './reportWebVitals';
 
 import {
@@ -13,9 +13,9 @@ import {
   withRouter,
 } from "react-router-dom";
 
-
+const Auth = React.lazy(() => import('./Pages/Auth'));
 const Root = () => {
-
+ 
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <Router>
