@@ -1,9 +1,6 @@
-
-//import './App.css';
-
 function App() {
   return (
-    <div className="c-app c-default-layout  align-items-center">
+    <div >
   <h1>Hello</h1>    </div>
   );
 }

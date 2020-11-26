@@ -1,9 +1,10 @@
 import React ,{Suspense}from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
+import Auth from './Pages/Auth'
 import reportWebVitals from './reportWebVitals';
-import { icons } from './assets/icons'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -11,15 +12,16 @@ import {
   
   withRouter,
 } from "react-router-dom";
-React.icons = icons;
+
 
 const Root = () => {
+
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <Router>
         <Switch>
           <Route exact path="/" component={withRouter(App)} />
-         
+          <Route exact path="/auth" component={withRouter(Auth)} />
 
          
 

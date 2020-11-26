@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@coreui/coreui": "^3.3.0",
-    "@coreui/icons": "^1.0.1",
-    "@coreui/icons-react": "^1.0.2",
-    "@coreui/react": "^3.3.3",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
