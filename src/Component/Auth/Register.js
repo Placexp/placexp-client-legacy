@@ -33,8 +33,8 @@ return (
             <h5>Email</h5>
            <input type="email" value={user.email} onChange={e=>setuser({...user,email:e.target.value})} placeholder="Enter your email"/>
             <h5>Password</h5>
-           <input type="password" value={user.password} onChange={e=>setuser({...user,password:e.target.value})}  placeholder="Enter your password"  value={user.password}/>
-           <h3>Already a user?<a onClick={()=>setauthpage("login")} style={{color:"#00bcd4"}}> Login</a></h3>
+           <input type="password" value={user.password} onChange={e=>setuser({...user,password:e.target.value})}  placeholder="Enter your password"  />
+           <h3>Already a user?<h3 onClick={()=>setauthpage("login")} style={{color:"#00bcd4"}}> Login</h3></h3>
            <button>REGISTER</button>
         </form>
     </div>

@@ -10,10 +10,12 @@ function Auth() {
         switch (authpage) {
             case 'signup':
                return <Register setauthpage={setauthpage} />
-                break;
+             
             case 'login': return <Login setauthpage={setauthpage} />
-                break;
-            case 'forgot':return <Forgot />    
+              
+            default:
+
+            return <Forgot />    
              }
         }
     return (handlerender(authpage))

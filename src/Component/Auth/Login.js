@@ -31,9 +31,10 @@ function Login({setauthpage}) {
                <input type="email" value={user.email} onChange={e=>setuser({...user,email:e.target.value})} placeholder="Enter your email"/>
                 <h5>Password</h5>
                <input type="password" value={user.password} onChange={e=>setuser({...user,password:e.target.value})}  placeholder="Enter your password"  />
-                <h3 className="forgotpass" onClick={()=>setauthpage("forgot") } style={{color:"#00bcd4"}}>Forgot Password?</h3>
-                <h3>Not Registered yet?<p  onClick={()=>setauthpage("signup")} style={{color:"#00bcd4"}}>Sign up</p></h3>
+               
+                <h3>Not Registered yet?<button  onClick={()=>setauthpage("signup")} style={{color:"#00bcd4"}}>Sign up</button></h3>
                <button>LOGIN</button>
+               <h3 className="forgotpass" color="red"  onClick={()=>setauthpage("forgot") } style={{color:"#00bcd4"}}>Forgot Password?</h3>
             </form>
         </div>
         </div>
