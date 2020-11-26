@@ -21,7 +21,7 @@ const Root = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={withRouter(App)} />
-          <Route exact path="/auth" component={withRouter(Auth)} />
+          <Route path="/auth" component={withRouter(Auth)} />
 
          
 
