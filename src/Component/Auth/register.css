@@ -1,129 +1,109 @@
-.container{
-    display:flex;
-}
-@media screen and (max-width: 880px) {
-    .login_container {
-      flex: 0.9;
-    }
-    .left_container {
-      display: none;
-    }
-    .header{
+@media screen and (max-width: 800px) {
+    #signup1{
         display:none;
-    }
+    }  
+    body{
+     background:white;
+   }
+ }
+ @media screen and (min-width: 800px) {
+     #signup{
+         -webkit-box-shadow: 10px 10px 66px -4px rgba(0,0,0,0.75);
+         -moz-box-shadow: 10px 10px 66px -4px rgba(0,0,0,0.75);
+         box-shadow: 15px 15px 16px -4px rgba(0,0,0,0.75);
+        
+ 
+     }
   }
-  @media screen and (min-width: 880px){
-      h3{
-        display:none;
-      }
-      .header_mobile{
-          display:none;
-      }
-      .signup_container{
-          margin-top: 12px;
-      }
-  }
-.left_container{
-    background:#00bcd4;
-    color:white;
-    flex:0.4;
-    height:100vh;
-    padding:30px;
-}
-.left_container >h1{
-    margin-top:120px;
-    font-size: 6.4em;
-    font-weight:800;
-}
-.left_container >h2{
-    margin:20px;
-    font-size: 1.4em;
-    font-weight:300;
-}
-.left_container >button{
-    display:flex;
-    justify-content: center;
-    padding:15px;
-    font-size: 1.2em;
-    border:none;
-    border:2px white solid;
-    background:#00bcd4;
-    margin:50px auto;
-    border-radius: 35px;
-    width:45%;
-    color:white;
-    transition: all .4s ease;
-}
-.left_container >button:hover{
-    background:white;
-    color:#00bcd4;
-}
-.left_container >button:focus{
-    outline:none;
-}
-h3{
-    margin:auto auto;
-}
-.user_icon{
-    height:22vh;
-    width:20vh;
-    object-fit: contain;
-    display:block;
-    margin:0 auto;
-}
-.signup_container{
-    flex:0.3;
-    height:100vh;
-    margin:auto auto;
-    margin-top:8px;
-    margin-left:0;
-    border-radius:10px;
-    width:330px;
-    height:fit-content;
-    padding:20px;
-    
-}
-.signup_container > h1{
-    text-align:center;
-    color:#00bcd4;
-    font-size: 2.5em;
-    font-weight: 550;
-}
-.signup_form{
-    display:flex;
-    flex-direction:column;
-    margin:20px;
-    
-}
-h5{
-    margin-bottom:3px;
-    font-size:1em;
-}
-.signup_form > input{
-      padding:15px;
-      font-size: 1.1em;
-      border:none;
-      background:#f4f4f2;
-      margin-bottom:25px;
-      border-radius:35px;
-}
-
-.signup_form > input:focus{
+ #signup {
+     background:white;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     padding: 5px;
+     max-width: 800px;
+     padding:0;
+     margin: auto auto;
+     margin-top: 40px;
+     
+   }
+ #signup3 >h1{
+       color: #834F80;
+   }
+   input{
+       padding:15px;
+       font-size: 1.1em;
+       border:none;
+       background:#f4f4f2;
+       margin-bottom:15px;
+       border-radius:5px;
+       width:70%;
+   }
+   #signup1 {
+       background:#834F80;
+      
+   }
+   #signup1 > h1{
+       margin-top: 50px;
+     font-size: 5.4em;
+     font-weight: 800;
+     color:white;
+   }
+   #signup1 >h2{
+     margin:20px;
+     font-size: 1.4em;
+     font-weight:300;
+     color:white;
+ }
+   input:focus{
+     outline:none;
+ }
+   button{
+     margin:auto auto;
+     margin-top:20px;
+     padding:15px;
+     width:60%;
+     font-size:1.2em;
+     background:#834F80;
+     color:white;
+     border-radius:5px;
+     border:none;
+   }
+   button:focus{
        outline:none;
-}
-
-.signup_form > button{
-    margin:auto auto;
-    margin-top:20px;
-    padding:15px;
-    width:60%;
-    font-size:1.2em;
-    background:#00bcd4;
-    color:white;
-    border-radius:35px;
-    border:none;
-}
-
-.signup_form > button:focus{
-         outline:none;
-}
+   }
+   #signup3{
+       padding:25px 0 25px 0;
+   }
+   #btn1{
+     display:flex;
+     justify-content: center;
+     padding:15px;
+     font-size: 1.2em;
+     border:none;
+     border:2px white solid;
+     background:#834F80;
+     margin:50px auto;
+     border-radius: 5px;
+     width:55%;
+     color:white;
+     transition: all .4s ease;
+   }
+ 
+   #btn1:hover{
+     background:white;
+     color:#834F80;
+ }
+ #btn1:focus{
+     outline:none;
+ }
+ .sign_icon {
+     height: 30vh;
+     width: 20vh;
+     object-fit: contain;
+     display: block;
+     margin: 0 auto;
+   }
+   #link1{
+       color:#834F80;
+   }
