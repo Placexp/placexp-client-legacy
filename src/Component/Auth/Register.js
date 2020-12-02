@@ -86,7 +86,7 @@ const handleSubmit=async(e)=>{
           email:user.email,
           program:user.program,
           branch:user.branch,
-          password:user.branch,
+          password:user.password,
           name:user.name,
           regno:user.regno
         }
