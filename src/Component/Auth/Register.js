@@ -25,7 +25,8 @@ const handleEmail=async(e)=>{
     try{
     e.preventDefault();
     setSubmitting(true);
-   
+    if(user.email.endsWith("@vitstudent.ac.in"))
+    {
     const response=await axios({
         method: 'post',
         url: 'https://placexp.herokuapp.com/user/exists',
@@ -52,6 +53,19 @@ const handleEmail=async(e)=>{
             confirmButtonText: 'Please try Again'
           });
       }
+    }
+    else
+    {
+      Swal.fire({
+            
+        title: 'Error',
+        text: 'This email is not VIT email id',
+        type: 'error',
+        icon:'error',
+        confirmButtonText: 'Please try Again'
+      });
+      setSubmitting(false);
+    }
     }
     catch(err)
     {
@@ -142,8 +156,8 @@ return (
            
             <input required type="text"  value={user.name} onChange={e=>setuser({...user,name:e.target.value})} placeholder="Enter your name" disabled={submitting}/  >
            
-           <input required type="email" value={user.email} onChange={e=>setuser({...user,email:e.target.value})} placeholder="Enter your email" disabled={submitting}/>
-            
+           <input required type="email" value={user.email} onChange={e=>setuser({...user,email:e.target.value})} placeholder="Enter your email" disabled={submitting} data-toggle="tooltip" data-placement="bottom" title="Eg. example@vitstudent.ac.in"/>
+          
            <input required type="text" value={user.regno} onChange={e=>setuser({...user,regno:e.target.value})}  placeholder="Enter your register number" disabled={submitting} />
            <h3>Already a user?<a id="link1" onClick={()=>setauthpage("login")} > Login</a></h3>
         <button> {submitting?( <div>Loading  <div class="spinner-border " role="status">
