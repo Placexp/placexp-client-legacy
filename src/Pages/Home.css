@@ -1,4 +1,3 @@
-
 .home {
   display: flex !important;
   flex-direction: row !important;
@@ -39,4 +38,27 @@ h1 {
 
 .contactUs > image {
   padding: 20px;
+}
+
+@media (max-width: 450px) {
+  html {
+      width: 215%;
+  }
+
+  .navbar {
+      width: 200%;
+      right: auto;
+  }
+  .title {
+      padding-top: 7rem;
+  }
+
+  .navbar-collapse {
+      z-index: 1;
+  }
+
+  .navbar-nav {
+      padding-left: 85%;
+      padding-top: 1rem;
+  }
 }
