@@ -5,6 +5,9 @@ import { Container } from "react-bootstrap";
 import Slider from "../Component/Layout/Slider";
 import Footer from "../Component/Layout/Footer";
 import './Home.css';
+import a from '../assets/Images/2.png';
+import b from '../assets/Images/1.png';
+
 import Context from '../context'
 const Home = () => {
     const {State,dispatch}=useContext(Context)
@@ -29,15 +32,18 @@ const Home = () => {
       <br />
         <Slider />
         <div className="about">
-          <h1 className="font-weight-light text-center text-lg-center mt-4 mb-0 font-size-20">About Us</h1>
+        <img src={a} className="w-25" style={{float:"right"}} />
+          <h1 className="font-weight-light  mt-4 mb-0 font-size-20">About Us  </h1>
           <div
         style={{
           width: '1.9375em',
           margin: '0px auto',
+          marginLeft:"50px",
           borderWidth: '3px',
           borderStyle: 'solid',
           borderColor: '#ef4c23',
-          borderImage: 'initial'
+          borderImage: 'initial',
+         
         }}
       />
       <br />
@@ -52,10 +58,11 @@ const Home = () => {
             the cities of Mumbai and Bengaluru to serve our clients across
             categories.
           </p>
+          
         </div>
 
         <div className="about">
-
+        <img src={b} className="w-25" style={{float:"left"}} />
           <h1 className="font-weight-light text-center text-lg-center mt-4 mb-0 font-size-20">Our Services</h1>
           <div
         style={{
@@ -68,7 +75,7 @@ const Home = () => {
         }}
       />
       <br />
-            
+        
          
           <p className="about-p1">
             The idea of bringing various integrated marketing service needs
@@ -80,7 +87,9 @@ const Home = () => {
             deliver your Business the whole Schbang. Our Team of 250 sits across
             the cities of Mumbai and Bengaluru to serve our clients across
             categories.
+
           </p>
+        
           <div className="contactUs">
             <div>
               <img
