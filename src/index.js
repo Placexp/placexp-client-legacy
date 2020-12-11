@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Events from "./events"
+import Queries from "./queries"
 
-ReactDOM.render(<Events />, document.getElementById("EvEnTs"));
+ReactDOM.render(<Queries />, document.getElementById("QuErIeS"));
+
+ 
