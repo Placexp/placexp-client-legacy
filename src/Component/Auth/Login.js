@@ -27,7 +27,7 @@ function Login({setauthpage}) {
        
         const response=await axios({
             method: 'post',
-            url: 'https://placexp.herokuapp.com/user/exists',
+            url: 'http://localhost:5000/user/exists',
             data: {
               email:user.email,
               
@@ -65,7 +65,8 @@ function Login({setauthpage}) {
        
         const response=await axios({
             method: 'post',
-            url: 'https://placexp.herokuapp.com/login',
+            url: 'http://localhost:5000/login',
+            withCredentials: true,
             data: {
               email:user.email,
               password:user.password
@@ -78,7 +79,8 @@ function Login({setauthpage}) {
                 
                 role: response.data.data.role,
                 email: response.data.data.email,
-                id: response.data.data.id
+                id: response.data.data._id,
+                personalDetails:response.data.data.personalDetails
               };
               const userCookie = JSON.stringify(user);
               setCookie('user', userCookie, { path: '/', maxAge: 86400 });

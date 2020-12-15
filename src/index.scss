@@ -8,9 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #1F3D7B !important;
+}
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+  background-color:#C57C55!important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.bg-primary-color
+{
+  background-color: #4e2062;
 }
 @import '~bootstrap/scss/bootstrap.scss';
 @import './assets/scss/auth','./assets/scss/layout','./assets/scss/event';

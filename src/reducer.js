@@ -1,4 +1,10 @@
+import React, { useContext ,useState} from "react";
+
+
+ 
+
 export default function reducer(State, { type, payload }) {
+ 
     switch (type) {
       case 'LOGIN_USER':
         return {

@@ -28,7 +28,7 @@
    
  }
 #login3 >h1{
-     color:#834F80;
+     color:#1F3D7B;
  }
  input{
      padding:15px;
@@ -40,7 +40,7 @@
      width:70%;
  }
  #login1 {
-     background:#834F80;
+     background:#1F3D7B;
     
  }
  #login1 > h1{
@@ -64,7 +64,7 @@
    padding:15px;
    width:60%;
    font-size:1.2em;
-   background:#834F80;
+   background:#1F3D7B;
    color:white;
    border-radius:5px;
    border:none;
@@ -81,7 +81,7 @@
    padding:15px;
    font-size: 1.2em;
    border:2px white solid;
-   background:#834F80;
+   background:#1F3D7B;
    margin:50px auto;
    border-radius: 5px;
    width:55%;
@@ -94,7 +94,7 @@
 
  #btn0:hover{
    background:white;
-   color:#834F80
+   color:#1F3D7B
 }
 .login_icon {
   
@@ -103,7 +103,7 @@
   margin: 0 auto;
 }
 #link{
-  color:#834F80;
+  color:#1F3D7B;
   
 }
 #link:hover{
