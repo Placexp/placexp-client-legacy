@@ -1,4 +1,5 @@
-import React ,{Suspense,useContext, useReducer}from 'react';
+import React ,{Suspense,useContext, useEffect, useReducer}from 'react';
+import { useCookies } from 'react-cookie';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
@@ -8,6 +9,7 @@ import Context from './context';
 import reducer from './reducer';
 import 'jquery';
 import 'popper.js';
+
 import ProtectedRoute from './ProtectedRoute';
 import 'bootstrap/dist/js/bootstrap';
 import {
@@ -18,12 +20,32 @@ import {
   withRouter,
 } from "react-router-dom";
 
+
 const Auth = React.lazy(() => import('./Pages/Auth'));
 const Home = React.lazy(() => import('./Pages/Home'));
 const Events = React.lazy(() => import('./Pages/Events'));
+const Contact = React.lazy(() => import('./Pages/Contact'));
+const Doubt = React.lazy(() => import('./Pages/Doubt'));
+const Doubtsp = React.lazy(() => import('./Pages/Doubtsp'));
+const Eventsp = React.lazy(() => import('./Pages/Eventsp'));
+const CreateEvent = React.lazy(() => import('./Pages/CreateEvent'));
+const ApproveEvent = React.lazy(() => import('./Pages/ApproveEvent'));
 const Root = () => {
   const initialState = useContext(Context);
   const [State, dispatch] = useReducer(reducer, initialState);
+  const [cookies, setCookie] = useCookies(['user']);  
+  useEffect(async() => {
+    try{    
+    if(cookies.user.role)
+  {
+  dispatch({type:"LOGIN_USER", payload: [] })
+  }
+}
+catch(err)
+{
+  console.log(err);}
+ }, []);
+  
   return (
     <Suspense fallback={<div>Loading... </div>}>
       <Router>
@@ -32,6 +54,12 @@ const Root = () => {
           <Route exact path="/" component={withRouter(Home)} />
           <Route path="/auth" component={withRouter(Auth)} />
           <Route path="/events" component={withRouter(Events)} />
+          <Route path="/contact" component={withRouter(Contact)} />
+          <Route path="/doubt" component={withRouter(Doubt)} />
+          <Route path="/query/:id" component={withRouter(Doubtsp)} />
+          <Route path="/event/new" component={withRouter(CreateEvent)} />
+          <Route path="/details/:id" component={withRouter(Eventsp)} />
+          <Route path="/verify" component={withRouter(ApproveEvent)} />
           <Route
               path="/logout"
               render={rProps => <Auth {...rProps} defaultRoutine="logout" />}

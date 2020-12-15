@@ -7,10 +7,14 @@ import Footer from "../Component/Layout/Footer";
 import './Home.css';
 import a from '../assets/Images/2.png';
 import b from '../assets/Images/1.png';
-
+import { useCookies } from 'react-cookie';
 import Context from '../context'
+import userEvent from "@testing-library/user-event";
 const Home = () => {
+
     const {State,dispatch}=useContext(Context)
+    const [cookies, removeCookie] = useCookies(['user']);
+   
   return (
     <div>
       <div className="home" id="homepage">
