@@ -30,6 +30,8 @@ const Doubtsp = React.lazy(() => import('./Pages/Doubtsp'));
 const Eventsp = React.lazy(() => import('./Pages/Eventsp'));
 const CreateEvent = React.lazy(() => import('./Pages/CreateEvent'));
 const ApproveEvent = React.lazy(() => import('./Pages/ApproveEvent'));
+const SignupC = React.lazy(() => import('./Pages/SignupC'));
+const Profile = React.lazy(() => import('./Pages/Profile'));
 const Root = () => {
   const initialState = useContext(Context);
   const [State, dispatch] = useReducer(reducer, initialState);
@@ -60,6 +62,8 @@ catch(err)
           <Route path="/event/new" component={withRouter(CreateEvent)} />
           <Route path="/details/:id" component={withRouter(Eventsp)} />
           <Route path="/verify" component={withRouter(ApproveEvent)} />
+          <Route path="/profile" component={withRouter(Profile)} />
+          <Route path="/signup/club/:id" component={withRouter(SignupC)} />
           <Route
               path="/logout"
               render={rProps => <Auth {...rProps} defaultRoutine="logout" />}

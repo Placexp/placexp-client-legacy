@@ -8,6 +8,7 @@ import Sidebar from "../Layout/Sidebar";
 import Header from "../Layout/Header";
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 function Event() {
   const history = useHistory();
@@ -23,7 +24,7 @@ const [cookies, setCookie] = useCookies(['user']);
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: 'http://localhost:5000/event/showAll',
+     url: Url()+'/event/showAll',
    });
    console.log(response);
    setEvent(response.data.data);

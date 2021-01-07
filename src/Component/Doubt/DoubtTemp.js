@@ -3,6 +3,7 @@ import React ,{useContext,useState,useEffect} from "react";
 import './Doubtsp.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 //import Sidebar from "../Component/Layout/Sidebar";
 
@@ -28,7 +29,7 @@ const DoubtTemp = ({id}) => {
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: 'http://localhost:5000/doubt/showReply',
+  url: Url()+'/doubt/showReply',
   data:{
       QforumId:id
   }
@@ -36,7 +37,7 @@ const response= await axios({
 const responseComment= await axios({
  method: 'post',
  withCredentials: true,
- url: 'http://localhost:5000/doubt/showComments',
+ url: Url()+'/doubt/showComments',
  data:{
      QforumId:id
  }
@@ -85,7 +86,7 @@ setLoading(true);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: 'http://localhost:5000/doubt/addComment',
+  url: Url()+'/doubt/addComment',
   data:{
       QforumId:id,
       message:ms,
@@ -145,7 +146,7 @@ return (<div >
         const response= await axios({
           method: 'post',
           withCredentials: true,
-          url: 'http://localhost:5000/doubt/addReply',
+          url: Url()+'/doubt/addReply',
           data:{
               QforumId:id,
               message:ms,

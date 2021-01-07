@@ -5,6 +5,7 @@ import axios from 'axios';
 import CreateDoubt from './CreateDoubt';
 import { useHistory } from "react-router-dom";
 import "./View.css";
+import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 const View=()=>{
     const [cookies, setCookie] = useCookies(['user']);
@@ -27,7 +28,7 @@ const View=()=>{
             await   axios({
                 method: 'post',
                 withCredentials: true,
-                url: 'http://localhost:5000/user/dislike',
+                url: Url()+'/user/dislike',
                 data:{
                     id:id
                 }
@@ -39,7 +40,7 @@ const View=()=>{
             await   axios({
                 method: 'post',
                 withCredentials: true,
-                url: 'http://localhost:5000/user/like',
+                url: Url()+'/user/like',
                 data:{
                     id:id
                 }
@@ -65,7 +66,7 @@ console.log(err);
        const response= await axios({
         method: 'get',
         withCredentials: true,
-        url: 'http://localhost:5000/doubt/showAll',
+        url: Url()+'/doubt/showAll',
       });
       console.log(response);
       setDoubtQ(response.data.data);
@@ -86,7 +87,7 @@ console.log(err);
     {
     for(let i=0;i<result.length;i++)
     {
-        if(result[i].isVisible.includes(cookies.user.personalDetails.program) || result[i].authorId._id==cookies.user.id)
+        if(result[i].isVisible.includes(cookies.user.personalDetails.program) || result[i].authorId._id==cookies.user.id||cookies.user.role=='C'||result[i].isVisible=='ALL')
         card.push(
 
             <div><div class="card gedf-card">
@@ -243,16 +244,7 @@ return (<div>
                     </div>
                 </div>
                 <br/>
-                <div class="card gedf-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
+
             </div>
         </div>
     </div>
