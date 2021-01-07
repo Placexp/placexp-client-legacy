@@ -3,12 +3,15 @@ import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import axios from 'axios';
 import Select from 'react-select';
+import { useCookies } from 'react-cookie';
+
 import {Url} from '../../Url';
 const CreateDoubt=()=>{
   
 const [sub,setSub]=useState('');
 const [fname,setFName]=useState('');
 const [visible,setVisible]=useState('');
+const [cookies, setCookie] = useCookies(['user']);
 const optionVis = [
   { label: 'SCE', value: 'SCE' },
   { label: 'SCOPE', value: 'SCOPE' },
@@ -34,7 +37,7 @@ vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+'/doubt/addDoubt',
+  url: Url()+"/doubt/addDoubt?id="+cookies.user.id+"&role="+cookies.user.role,
   data:{
     title:title,
     subject:sub,

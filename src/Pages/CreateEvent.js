@@ -8,6 +8,7 @@ import {Url} from '../Url';
 import Select from 'react-select';
 import  FormData from 'form-data';
 import Header from '../Component/Layout/Header';
+import { useCookies } from 'react-cookie';
 import "./Button.css"
 const CreateEvent=()=>{
   const [time ,setTime]=useState(new Date())
@@ -15,6 +16,8 @@ const [sub,setSub]=useState('');
 const [fname,setFName]=useState('');
 const [link,setLink]=useState('');
 const [visible,setVisible]=useState('');
+const [cookies, setCookie] = useCookies(['user']);
+
 const optionVis = [
   { label: 'SCE', value: 'SCE' },
   { label: 'SCOPE', value: 'SCOPE' },
@@ -40,7 +43,7 @@ vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+'/event/addEvent',
+  url: Url()+"/event/addEvent?id="+cookies.user.id+"&role="+cookies.user.role,
   data:{
     title:title,
     subject:sub,

@@ -28,7 +28,7 @@ const View=()=>{
             await   axios({
                 method: 'post',
                 withCredentials: true,
-                url: Url()+'/user/dislike',
+                url: Url()+"/user/dislike?id="+cookies.user.id+"&role="+cookies.user.role,
                 data:{
                     id:id
                 }
@@ -40,7 +40,7 @@ const View=()=>{
             await   axios({
                 method: 'post',
                 withCredentials: true,
-                url: Url()+'/user/like',
+                url: Url()+"/user/like?id="+cookies.user.id+"&role="+cookies.user.role,
                 data:{
                     id:id
                 }
@@ -66,7 +66,7 @@ console.log(err);
        const response= await axios({
         method: 'get',
         withCredentials: true,
-        url: Url()+'/doubt/showAll',
+        url: Url()+"/doubt/showAll?id="+cookies.user.id+"&role="+cookies.user.role,
       });
       console.log(response);
       setDoubtQ(response.data.data);

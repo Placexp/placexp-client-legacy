@@ -29,7 +29,7 @@ function Login({setauthpage}) {
         const response=await axios({
             method: 'post',
             url: Url()+'/user/exists',
-            withCredentials: true,
+           
             data: {
               email:user.email,
               

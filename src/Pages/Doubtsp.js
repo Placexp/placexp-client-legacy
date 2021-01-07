@@ -30,7 +30,7 @@ const Doubtsp = (props) => {
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+'/doubt/showReply',
+  url: Url()+"/doubt/showReply?id="+cookies.user.id+"&role="+cookies.user.role,
   data:{
       QforumId:props.location.state.id
   }
@@ -38,7 +38,7 @@ const response= await axios({
 const responseComment= await axios({
  method: 'post',
  withCredentials: true,
- url: Url()+'/doubt/showComments',
+ url: Url()+"/doubt/showComments?id="+cookies.user.id+"&role="+cookies.user.role,
  data:{
      QforumId:props.location.state.id
  }
@@ -87,7 +87,7 @@ setLoading(true);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+'/doubt/addComment',
+  url: Url()+"/doubt/addComment?id="+cookies.user.id+"&role="+cookies.user.role,
   data:{
       QforumId:props.location.state.id,
       message:ms,
@@ -147,7 +147,7 @@ return (<div >
         const response= await axios({
           method: 'post',
           withCredentials: true,
-          url: Url()+'/doubt/addReply',
+          url: Url()+"/doubt/addReply?id="+cookies.user.id+"&role="+cookies.user.role,
           data:{
               QforumId:props.location.state.id,
               message:ms,
