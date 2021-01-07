@@ -52,15 +52,9 @@ const Home = () => {
       />
       <br />
           <p className="about-p1">
-            The idea of bringing various integrated marketing service needs
-            under one roof is our reason to exist.
-          </p>
+            Coming soon      </p>
           <p>
-            We've put together an Integrated Team of Creators, Designers,
-            Technologists, Media Planners and Film Creators under one roof to
-            deliver your Business the whole Schbang. Our Team of 250 sits across
-            the cities of Mumbai and Bengaluru to serve our clients across
-            categories.
+            
           </p>
           
         </div>
@@ -82,15 +76,9 @@ const Home = () => {
         
          
           <p className="about-p1">
-            The idea of bringing various integrated marketing service needs
-            under one roof is our reason to exist.
-          </p>
+            Coming soon    </p>
           <p>
-            We've put together an Integrated Team of Creators, Designers,
-            Technologists, Media Planners and Film Creators under one roof to
-            deliver your Business the whole Schbang. Our Team of 250 sits across
-            the cities of Mumbai and Bengaluru to serve our clients across
-            categories.
+           
 
           </p>
         
