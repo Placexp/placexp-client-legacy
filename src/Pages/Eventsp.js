@@ -17,9 +17,9 @@ useEffect(async() => {
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: Url()+"/event/showEvent?id="+props.match.params.id,
+     url: Url()+"/event/showEvent?id="+cookies.user.id+"&role="+cookies.user.role+"&i="+props.match.params.id,
      data:{
-         id:props.match.params.id
+         i:props.match.params.id
      }
    });
    if(response.data.code==400)

@@ -6,6 +6,7 @@ import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 import { Link, Redirect } from 'react-router-dom';
 
+
 import Header from "../Layout/Header";
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -23,7 +24,7 @@ const Approve= () => {
             const response= await axios({
              method: 'get',
              withCredentials: true,
-             url: Url()+"/admin/unverifiedEvents",
+             url: Url()+"/admin/unverifiedEvents?id="+cookies.user.id+"&role="+cookies.user.role,
             
            });
            if(response.data.code==400)
@@ -42,9 +43,10 @@ const Approve= () => {
             const response= await axios({
                 method: 'post',
                 withCredentials: true,
-                url: Url()+"/admin/verifyEvent/",
+                url: Url()+"/admin/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role,
                data:{
-                   id:id
+                   id:id,
+                  
                }
               });
               console.log(response);
