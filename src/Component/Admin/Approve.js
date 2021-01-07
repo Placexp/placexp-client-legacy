@@ -2,7 +2,7 @@ import React ,{useContext,useState,useEffect} from "react";
 
 import "./table.css";
 
-
+import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 import { Link, Redirect } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const Approve= () => {
             const response= await axios({
              method: 'get',
              withCredentials: true,
-             url: "http://localhost:5000/admin/unverifiedEvents",
+             url: Url()+"/admin/unverifiedEvents",
             
            });
            if(response.data.code==400)
@@ -42,7 +42,7 @@ const Approve= () => {
             const response= await axios({
                 method: 'post',
                 withCredentials: true,
-                url: "http://localhost:5000/admin/verifyEvent/",
+                url: Url()+"/admin/verifyEvent/",
                data:{
                    id:id
                }
@@ -64,7 +64,7 @@ for(let i=0;i<event.length;i++)
        
         <th  scope="row">{event[i].title}</th>
         <td data-title="Date">{event[i].eventDate.split("T")[0].split("-").reverse().join("-")+" "+event[i].eventDate.split("T")[1].slice(0,5)}</td>
-        <td data-title="Worldwide Gross" >Android Club</td>
+        <td data-title="Worldwide Gross" >{event[i].authorId.personalDetails.name}</td>
         <td data-title="Link" data-type="currency"><a href={"/details/"+event[i]._id} >See Details</a></td>
         <td data-title="Action" > <button  className="btn btn-secondary" onClick={e=>ApproveHandle(event[i]._id)}>Approve</button></td>
      
@@ -83,7 +83,7 @@ return (
 
     <br/><br/><br/><br/><br/>
     <table class="responsive-table">
-<caption>Top 10 Grossing Animated Films of All Time</caption>
+<caption>Verify Event</caption>
 <thead>
   <tr>
  

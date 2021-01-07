@@ -3,6 +3,7 @@ import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Context from '../context';
+import {Url} from '../Url';
 import DoubtTemp from '../Component/Doubt/DoubtTemp'
 //import Sidebar from "../Component/Layout/Sidebar";
 import Header from "../Component/Layout/Header";
@@ -16,7 +17,7 @@ useEffect(async() => {
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: "http://localhost:5000/event/showEvent?id="+props.match.params.id,
+     url: Url()+"/event/showEvent?id="+props.match.params.id,
      data:{
          id:props.match.params.id
      }

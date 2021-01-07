@@ -1,5 +1,6 @@
 import React,{useState,useContext} from 'react'
 import './login.css'
+import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 import usericon from './user.png'
 import Row from 'react-bootstrap/Row'
@@ -27,7 +28,8 @@ function Login({setauthpage}) {
        
         const response=await axios({
             method: 'post',
-            url: 'http://localhost:5000/user/exists',
+            url: Url()+'/user/exists',
+            withCredentials: true,
             data: {
               email:user.email,
               
@@ -65,7 +67,7 @@ function Login({setauthpage}) {
        
         const response=await axios({
             method: 'post',
-            url: 'http://localhost:5000/login',
+            url: Url()+'/login',
             withCredentials: true,
             data: {
               email:user.email,

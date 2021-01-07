@@ -3,6 +3,7 @@ import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import axios from 'axios';
 import Select from 'react-select';
+import {Url} from '../../Url';
 const CreateDoubt=()=>{
   
 const [sub,setSub]=useState('');
@@ -33,13 +34,17 @@ vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: 'http://localhost:5000/doubt/addDoubt',
+  url: Url()+'/doubt/addDoubt',
   data:{
     title:title,
     subject:sub,
    isVisible:vis
   }
 });
+setTitle('');
+setFName('');
+setSub('');
+setVisible('');
 console.log(response);
       }
       catch(err)

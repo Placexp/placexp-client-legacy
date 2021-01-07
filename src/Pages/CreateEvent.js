@@ -4,7 +4,7 @@ import DateTimePicker from 'react-datetime-picker';
 import 'suneditor/dist/css/suneditor.min.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-
+import {Url} from '../Url';
 import Select from 'react-select';
 import  FormData from 'form-data';
 import Header from '../Component/Layout/Header';
@@ -40,7 +40,7 @@ vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: 'http://localhost:5000/event/addEvent',
+  url: Url()+'/event/addEvent',
   data:{
     title:title,
     subject:sub,
