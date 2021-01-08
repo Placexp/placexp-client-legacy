@@ -52,7 +52,7 @@ const Home = () => {
       />
       <br />
           <p className="about-p1">
-            Coming soon      </p>
+            This website is a multi-utility platform to facilitate all the VITians timely access to all the academic related resources and solve any queries related to the curriculum or co-curriculum, for exploring opportunities and enhancing outreach using the online search and other tools available for all the VITians. It is owned and managed by the team of PlaceXP as a registered club of Vellore Technology, Chennai, 600127(India).     </p>
           <p>
             
           </p>
@@ -76,7 +76,7 @@ const Home = () => {
         
          
           <p className="about-p1">
-            Coming soon    </p>
+           This website is a multi-utility platform to facilitate all the VITians timely access to all the academic related resources and solve any queries related to the curriculum or co-curriculum, for exploring opportunities and enhancing outreach using the online search and other tools available for all the VITians. It is owned and managed by the team of PlaceXP as a registered club of Vellore Technology, Chennai, 600127(India).    </p>
           <p>
            
 
