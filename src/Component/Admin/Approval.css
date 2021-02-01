@@ -1,0 +1,105 @@
+.jumbotron {
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    height: fit-content;
+    width: 1500px;
+    background: aliceblue;
+    text-align: center;
+    padding: 35px;
+    zoom: 67%;
+}
+.buttony {
+    margin-top: 30px;
+}
+.entries {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+.form-control col-3 {
+    margin-left: 0;
+}
+
+table {
+    border: 2px solid black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  
+  table tr {
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  
+  table th, table td {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  } 
+
+
+@media (max-width: 767.98px) {
+    table {
+      border: 0;
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      display: block;
+      font-size: 17px;
+      text-align: right;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+    .jumbotron {
+        width: 650px;
+        position: absolute;
+        left: 75px;
+        top: 100px;
+    }
+    .entries {
+        font-size: 17px;
+    }
+  }
