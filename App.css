@@ -1,0 +1,194 @@
+.App {
+  background-color: white;
+  height:900px;
+  margin: 0;
+}
+.cssload-container {
+	margin: -73px -98px;
+	width: 195px;
+	height: 146px;
+	position: absolute;
+	left: 50%;
+  top: 500px;
+
+}
+.cssload-dot {
+	background: black;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	bottom: 49px;
+  right: 70px;
+	transform-origin: center bottom;
+		-o-transform-origin: center bottom;
+		-ms-transform-origin: center bottom;
+		-webkit-transform-origin: center bottom;
+		-moz-transform-origin: center bottom;
+	animation: cssload-dot 0.78s ease-in-out infinite;
+		-o-animation: cssload-dot 0.78s ease-in-out infinite;
+		-ms-animation: cssload-dot 0.78s ease-in-out infinite;
+		-webkit-animation: cssload-dot 0.78s ease-in-out infinite;
+		-moz-animation: cssload-dot 0.78s ease-in-out infinite;
+}
+.moving-text{
+  position: relative;
+  top: 40px;
+  left: 25px;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.step {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-top: 3px solid black;;
+	top: 0;
+	right:0;
+}
+
+
+
+#cssload-s1 { animation: cssload-anim 2.34s linear infinite;
+		-o-animation: cssload-anim 2.34s linear infinite;
+		-ms-animation: cssload-anim 2.34s linear infinite;
+		-webkit-animation: cssload-anim 2.34s linear infinite;
+		-moz-animation: cssload-anim 2.34s linear infinite; }
+#cssload-s2 { animation: cssload-anim 2.34s linear infinite -0.78s;
+		-o-animation: cssload-anim 2.34s linear infinite -0.78s;
+		-ms-animation: cssload-anim 2.34s linear infinite -0.78s;
+		-webkit-animation: cssload-anim 2.34s linear infinite -0.78s;
+		-moz-animation: cssload-anim 2.34s linear infinite -0.78s; }
+#cssload-s3 { animation: cssload-anim 2.34s linear infinite -1.56s;
+		-o-animation: cssload-anim 2.34s linear infinite -1.56s;
+		-ms-animation: cssload-anim 2.34s linear infinite -1.56s;
+		-webkit-animation: cssload-anim 2.34s linear infinite -1.56s;
+		-moz-animation: cssload-anim 2.34s linear infinite -1.56s; }
+
+@keyframes cssload-dot {
+ 0% { transform: scale(1,.7); }
+ 20% { transform: scale(.7,1.2); }
+ 40% { transform: scale(1,1);}
+ 50% { bottom: 163px;}
+ 46% { transform: scale(1,1);}
+ 80% { transform: scale(.7,1.2);}
+ 90% { transform: scale(.7,1.2);}
+ 100% { transform: scale(1,0.7);}
+}
+
+@-o-keyframes cssload-dot {
+ 0% { -o-transform: scale(1,.7); }
+ 20% { -o-transform: scale(.7,1.2); }
+ 40% { -o-transform: scale(1,1);}
+ 50% { bottom: 163px;}
+ 46% { -o-transform: scale(1,1);}
+ 80% { -o-transform: scale(.7,1.2);}
+ 90% { -o-transform: scale(.7,1.2);}
+ 100% { -o-transform: scale(1,0.7);}
+}
+
+@-ms-keyframes cssload-dot {
+ 0% { -ms-transform: scale(1,.7); }
+ 20% { -ms-transform: scale(.7,1.2); }
+ 40% { -ms-transform: scale(1,1);}
+ 50% { bottom: 163px;}
+ 46% { -ms-transform: scale(1,1);}
+ 80% { -ms-transform: scale(.7,1.2);}
+ 90% { -ms-transform: scale(.7,1.2);}
+ 100% { -ms-transform: scale(1,0.7);}
+}
+
+@-webkit-keyframes cssload-dot {
+ 0% { -webkit-transform: scale(1,.7); }
+ 20% { -webkit-transform: scale(.7,1.2); }
+ 40% { -webkit-transform: scale(1,1);}
+ 50% { bottom: 163px;}
+ 46% { -webkit-transform: scale(1,1);}
+ 80% { -webkit-transform: scale(.7,1.2);}
+ 90% { -webkit-transform: scale(.7,1.2);}
+ 100% { -webkit-transform: scale(1,0.7);}
+}
+
+@-moz-keyframes cssload-dot {
+ 0% { -moz-transform: scale(1,.7); }
+ 20% { -moz-transform: scale(.7,1.2); }
+ 40% { -moz-transform: scale(1,1);}
+ 50% { bottom: 163px;}
+ 46% { -moz-transform: scale(1,1);}
+ 80% { -moz-transform: scale(.7,1.2);}
+ 90% { -moz-transform: scale(.7,1.2);}
+ 100% { -moz-transform: scale(1,0.7);}
+}
+
+@keyframes cssload-anim {
+	0% {
+		opacity: 0;
+		top: 0;
+		right: 0;
+	}
+	50% { opacity: 1; }
+	100% {
+		top: 146px;
+		right: 146px;
+		opacity: 0;
+	}
+}
+
+@-o-keyframes cssload-anim {
+	0% {
+		opacity: 0;
+		top: 0;
+		right: 0;
+	}
+	50% { opacity: 1; }
+	100% {
+		top: 146px;
+		right: 146px;
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes cssload-anim {
+	0% {
+		opacity: 0;
+		top: 0;
+		right: 0;
+	}
+	50% { opacity: 1; }
+	100% {
+		top: 146px;
+		right: 146px;
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cssload-anim {
+	0% {
+		opacity: 0;
+		top: 0;
+		right: 0;
+	}
+	50% { opacity: 1; }
+	100% {
+		top: 146px;
+		right: 146px;
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes cssload-anim {
+	0% {
+		opacity: 0;
+		top: 0;
+		right: 0;
+	}
+	50% { opacity: 1; }
+	100% {
+		top: 146px;
+		right: 146px;
+		opacity: 0;
+	}
+}
