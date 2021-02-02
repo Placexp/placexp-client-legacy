@@ -17,7 +17,7 @@ useEffect(async() => {
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: Url()+"/event/showEvent?id="+cookies.user.id+"&role="+cookies.user.role+"&i="+props.match.params.id,
+     url: Url()+"/event/showEvent?id="+cookies.user.id+"&role="+cookies.user.role+"&i="+props.match.params.id+"&token="+cookies.user.token,
      data:{
          i:props.match.params.id
      }
