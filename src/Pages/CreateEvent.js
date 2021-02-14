@@ -115,7 +115,7 @@ return (<div  className="card  w-100  px-6 p-4  ">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Subject</label>
     <div class="col-sm-10">
-    <SunEditor ref={editorRef} setContent={sub}  onChange={hand} onScroll={true} />
+    <SunEditor ref={editorRef} setContent={sub} showToolbar={false} onChange={hand} onScroll={true} />
     </div>
   </div>
   <div class="form-group row">
