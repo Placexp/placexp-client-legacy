@@ -10,15 +10,15 @@ import  FormData from 'form-data';
 import Header from '../Component/Layout/Header';
 import { useCookies } from 'react-cookie';
 import "./Button.css"
-const CreateEvent=()=>{
-  const [time ,setTime]=useState(new Date())
+const Interviewct=({history})=>{
+
 const [sub,setSub]=useState('');
 const [fname,setFName]=useState('');
 const [link,setLink]=useState('');
-const [visible,setVisible]=useState('');
+const [company,setCompany]=useState('');
 const [cookies, setCookie] = useCookies(['user']);
-
-const optionVis = [
+if(cookies.user==null)history.push("/auth")
+const companyL = [
   { label: 'SCE', value: 'SCE' },
   { label: 'SCOPE', value: 'SCOPE' },
   { label: 'SELECT', value: 'SELECT' },
@@ -37,29 +37,26 @@ const editorRef = useRef();
     {
       try{
 e.preventDefault();
-let vis=[];
-for(let i=0;i<visible.length;i++)
-vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+"/event/addEvent?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
+  url: Url()+"/post/write/post/new?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
   data:{
     title:title,
     subject:sub,
-   isVisible:vis,
+   company:company,
    link:link,
-   eventDate:time
+   
   }
 });
 console.log(response);
 setLink('');
-setTitle('');setSub('');setVisible('');setFName('');
+setTitle('');setSub('');setCompany('');setFName('');
 
 Swal.fire({
        
     title: 'Success',
-    text: 'Event Registered. Verification Pending from SWC ',
+    text: 'Post registered . Our content team will verify the content and will soon notify about the updates . Stay Tuned. ',
     imageUrl:"https://imgur.com/MiIjgkr.jpg",
     imageWidth: "50px",
     imageHeight:"50px",
@@ -99,7 +96,7 @@ console.log(err);
 }
     };
 const displayForm=()=>{
-return (<div  className="card  w-100  px-6 p-4  "> 
+return (<div  className="card  w-100 h-100  px-6 p-4  "> 
    <center> <h5 >Create Event</h5> </center><div
     style={{
       width: '1.9375em',
@@ -111,73 +108,33 @@ return (<div  className="card  w-100  px-6 p-4  ">
     }}
   /><br/>
 <form onSubmit={handleSubmit}>
-
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Subject</label>
-    <div class="col-sm-10">
-    <SunEditor ref={editorRef} setContent={sub} showToolbar={false}  onChange={hand} onScroll={true} />
-    </div>
-  </div>
-  <div class="form-group row">
+<div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
     <div class="col-sm-10">
       <input type="text"  value={title} onChange={e=>setTitle(e.target.value)} class="form-control" id="inputPassword"/>
     </div>
   </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Subject</label>
+    <div class="col-sm-10">
+    <SunEditor ref={editorRef} setContent={sub} showToolbar={true}  onChange={hand} onScroll={true} />
+    </div>
+  </div>
+  
   
   <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Visible to</label>
-    <div class="col-sm-5"><Fragment>
-    <Select
-                    placeholder="Select"
-                    value={visible}
-                    onChange={option => setVisible(option)}
-                    options={optionVis}
-                    isMulti
-                    isSearchable
-                    required
-                />
-            {(
-            <input
-              tabIndex={-1}
-              autoComplete="off"
-              style={{ opacity: 0, height: 0 }}
-              value={visible}
-              required
-            />
-            )}
-      
-      
-      </Fragment> </div>
-    
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Event Brocehure</label>
+    <label for="staticEmail" class="col-sm-2 col-form-label">Company</label>
     <div class="col-sm-10">
- <div class="input-group is-invalid">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" multiple onChange={e=>setFName(e.target.files[0])} required/>
-      <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
+      <input type="text"  value={company} onChange={e=>setCompany(e.target.value)} class="form-control" id="inputPassword"/>
     </div>
-    <div class="input-group-append">
-       <button class="btn btn-secondary" type="button" onClick={uploadHandle}>Upload</button>
-    </div>
-  </div>
-  <div className="invalid-feedback">
-    {fname.name?"Selected file : "+fname.name:''}
-    {console.log(fname)}<br/>
-            {link!=''?(<a href={link}>{link}</a>):''}
-  </div> 
-  </div>
   </div>
   <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Data </label>
-    <div class="col-sm-4">
-    <DateTimePicker value={time} onChange={setTime}
-              />
+    <label for="staticEmail" class="col-sm-2 col-form-label">Video</label>
+    <div class="col-sm-10">
+      <input type="text"  value={link} onChange={e=>setLink(e.target.value)} class="form-control" id="inputPassword"/>
     </div>
   </div>
-  <center><button className='btn btn-primary' >Submit</button></center>
+    <center><button className='btn btn-primary' >Submit</button></center>
 </form>
 
 </div>);
@@ -197,4 +154,4 @@ return (
 );
 
 };
-export default CreateEvent;
+export default Interviewct;

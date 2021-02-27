@@ -21,15 +21,20 @@ const Header = () => {
               <Nav.Link href="service">Services</Nav.Link>
               } */}
               <Nav.Link > </Nav.Link>
-              <NavDropdown title="Events" id="basic-nav-dropdown">
+            { /* <NavDropdown title="Events" id="basic-nav-dropdown">
               <NavDropdown.Item ><Link className="link" to="/events">View Events</Link></NavDropdown.Item>
               {State.isAuth && cookies.user.role!='S'&& (<NavDropdown.Item ><Link className="link" to="/event/new">Create Event</Link></NavDropdown.Item>)}
               {State.isAuth && cookies.user.role=='A'&& ( <NavDropdown.Item ><Link className="link" to="/verify">Verify Event</Link></NavDropdown.Item>)}
-                </NavDropdown>
-              <Nav.Link > <Link className="link" to="/doubt">Doubt</Link></Nav.Link>
-            {State.isAuth?( <NavDropdown title={cookies.user.personalDetails.name} id="basic-nav-dropdown2"><NavDropdown.Item ><Link className="link" to="/profile">Profile</Link></NavDropdown.Item><NavDropdown.Item ><Link className="link" to="/logout">Logout</Link></NavDropdown.Item> </NavDropdown>):(<Nav.Link><Link className="link" to="/auth">Sign In</Link></Nav.Link>)}
-              
-            </Nav>
+                </NavDropdown>*/
+}
+              <NavDropdown title="Interview" id="basic-nav-dropdown2"><NavDropdown.Item ><Link className="link" to="/interview">Interview</Link></NavDropdown.Item>{State.isAuth && cookies.user.role=='A'&& <NavDropdown.Item ><Link className="link" to="/interview_create">Add Interview</Link></NavDropdown.Item>}
+              {State.isAuth && cookies.user.role=='A'&& ( <NavDropdown.Item ><Link className="link" to="/verifyinterview">Verify Interview</Link></NavDropdown.Item>)}
+               </NavDropdown>
+            {
+             // <Nav.Link > <Link className="link" to="/doubt">Doubt</Link></Nav.Link>
+            }
+            {State.isAuth?( <NavDropdown title={cookies.user.personalDetails.name} id="basic-nav-dropdown2"><NavDropdown.Item ><Link className="link" to="/logout">Logout</Link></NavDropdown.Item> </NavDropdown>):(<Nav.Link><Link className="link" to="/auth">Sign In</Link></Nav.Link>)
+            }</Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
