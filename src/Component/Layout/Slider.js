@@ -10,7 +10,7 @@ import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 const Slider = () => {
   return (
     <div className="container " >    <AwesomeSlider  cssModule={AwesomeSliderStyles} >
-   <div><img src={s1} className="w-100" style={{height:"560px"}}/></div> 
+   <div><img src={s1} className="w-100" /></div> 
    <div><img src={s2} className="w-100"/></div> 
  </AwesomeSlider>
  </div>
