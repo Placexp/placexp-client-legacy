@@ -24,7 +24,7 @@ const Approve= () => {
             const response= await axios({
              method: 'get',
              withCredentials: true,
-             url: Url()+"/admin/unverifiedEvents?id="+cookies.user.id+"&role="+cookies.user.role,
+             url: Url()+"/admin/unverifiedEvents?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
             
            });
            if(response.data.code==400)
@@ -43,7 +43,7 @@ const Approve= () => {
             const response= await axios({
                 method: 'post',
                 withCredentials: true,
-                url: Url()+"/admin/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role,
+                url: Url()+"/admin/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
                data:{
                    id:id,
                   

@@ -29,7 +29,7 @@ const DoubtTemp = ({id}) => {
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+"/doubt/showReply?id="+cookies.user.id+"&role="+cookies.user.role,
+  url: Url()+"/doubt/showReply?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
   data:{
       QforumId:id
   }
@@ -37,7 +37,7 @@ const response= await axios({
 const responseComment= await axios({
  method: 'post',
  withCredentials: true,
- url: Url()+"/doubt/showComments?id="+cookies.user.id+"&role="+cookies.user.role,
+ url: Url()+"/doubt/showComments?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
  data:{
      QforumId:id
  }
@@ -86,7 +86,7 @@ setLoading(true);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+'/doubt/addComment',
+  url: Url()+'/doubt/addComment?id='+cookies.user.id+"&token="+cookies.user.token,
   data:{
       QforumId:id,
       message:ms,

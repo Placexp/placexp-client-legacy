@@ -43,7 +43,7 @@ vis.push(visible[i].value);
 const response= await axios({
   method: 'post',
   withCredentials: true,
-  url: Url()+"/event/addEvent?id="+cookies.user.id+"&role="+cookies.user.role,
+  url: Url()+"/event/addEvent?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
   data:{
     title:title,
     subject:sub,
