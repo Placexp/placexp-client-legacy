@@ -8,6 +8,7 @@ const Home = () => {
   return (
     <div className="container">
         <Header />
+
       <Slider />
    <Floating/>
     </div>
