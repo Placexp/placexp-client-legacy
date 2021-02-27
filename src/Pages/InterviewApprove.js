@@ -104,7 +104,7 @@ return (
   <tr>
  
   <th scope="col">Email</th>
-    <th scope="col">Edit Link</th>
+    <th scope="col">Edit </th>
     <th scope="col">Link</th>
     <th scope="col">Action</th>
    
