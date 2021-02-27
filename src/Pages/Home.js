@@ -16,9 +16,7 @@ const Home = () => {
   const [cookies, setCookie] = useCookies(['user']);
   return (
     <div >
-     {/* {   <Header />
-      <Slider />
-   <Floating/> */}
+    
    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">
    <Link className="nav-link" to="/"><img style={{width:"50px"}}  src={logo}/>Placexp</Link>
