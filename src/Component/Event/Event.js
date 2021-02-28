@@ -24,7 +24,7 @@ const [cookies, setCookie] = useCookies(['user']);
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: Url()+"/event/showAll?id="+cookies.user.id+"&role="+cookies.user.role,
+     url: Url()+"/event/showAll?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
    });
    console.log(response);
    setEvent(response.data.data);

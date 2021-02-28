@@ -32,6 +32,11 @@ const CreateEvent = React.lazy(() => import('./Pages/CreateEvent'));
 const ApproveEvent = React.lazy(() => import('./Pages/ApproveEvent'));
 const SignupC = React.lazy(() => import('./Pages/SignupC'));
 const Profile = React.lazy(() => import('./Pages/Profile'));
+const Interview = React.lazy(() => import('./Pages/Interview'));
+const Interviewsp = React.lazy(() => import('./Pages/Interviewsp'));
+const Interviewct = React.lazy(() => import('./Pages/Interviewct'));
+const InterviewApprove = React.lazy(() => import('./Pages/InterviewApprove'));
+const Interviewed = React.lazy(() => import('./Pages/Interviewed'));
 const Root = () => {
   const initialState = useContext(Context);
   const [State, dispatch] = useReducer(reducer, initialState);
@@ -64,6 +69,12 @@ catch(err)
           <Route path="/verify" component={withRouter(ApproveEvent)} />
           <Route path="/profile" component={withRouter(Profile)} />
           <Route path="/signup/club/:id" component={withRouter(SignupC)} />
+         
+          <Route path="/interview_create" component={withRouter(Interviewct)} />
+          <Route path="/interview/:id" component={withRouter(Interviewsp)} />
+          <Route path="/interview_edit/:id" component={withRouter(Interviewed)} />
+          <Route path="/interview" component={withRouter(Interview)} />
+          <Route path="/verifyinterview" component={withRouter(InterviewApprove)} />
           <Route
               path="/logout"
               render={rProps => <Auth {...rProps} defaultRoutine="logout" />}

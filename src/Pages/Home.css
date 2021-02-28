@@ -1,64 +1,69 @@
-.home {
-  display: flex !important;
-  flex-direction: row !important;
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-caption {
+  bottom: 270px;
 }
 
-.about {
-  width: 100%;
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
 }
 
-.about-p1 {
-  font-size: 1rem;
+.carousel-caption p {
+  width: 75%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
 }
 
-h1 {
-  font-weight: 400;
-  
+.navbar-light .navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.home-container {
-  margin-top: 7% !important;
-  text-align: left;
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
 }
 
-.contact-heading {
-  margin-bottom: 40px;
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
 }
 
-.contact-img {
-  height: 80px;
-  width: 80px;
+.navbar-toggler {
+  background: #fff;
 }
 
-.contactUs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.navbar-nav {
+  text-align: center;
 }
 
-.contactUs > image {
-  padding: 20px;
+.nav-link {
+  padding: .2rem 1rem;
 }
 
-@media (max-width: 450px) {
-  html {
-      width: 215%;
-  }
-
-  .navbar {
-      width: 200%;
-      right: auto;
-  }
-  .title {
-      padding-top: 7rem;
-  }
-
-  .navbar-collapse {
-      z-index: 1;
-  }
-
-  .navbar-nav {
-      padding-left: 85%;
-      padding-top: 1rem;
-  }
+.nav-link.active,.nav-link:focus{
+  color: #fff;
 }
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+

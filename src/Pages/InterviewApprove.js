@@ -1,16 +1,12 @@
 import React ,{useContext,useState,useEffect} from "react";
-
-import "./table.css";
-
-import {Url} from '../../Url';
+import "../Component/Admin/table.css";
+import {Url} from '../Url';
 import { useCookies } from 'react-cookie';
 import { Link, Redirect } from 'react-router-dom';
-
-
-import Header from "../Layout/Header";
+import Header from "../Component/Layout/Header";
 import axios from 'axios';
 import Swal from 'sweetalert2';
-const Approve= () => {
+const InterviewApprove= () => {
     
     
         
@@ -24,7 +20,7 @@ const Approve= () => {
             const response= await axios({
              method: 'get',
              withCredentials: true,
-             url: Url()+"/admin/unverifiedEvents?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
+             url: Url()+"/admin/post/unverifiedEvents?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
             
            });
            if(response.data.code==400)
@@ -43,10 +39,29 @@ const Approve= () => {
             const response= await axios({
                 method: 'post',
                 withCredentials: true,
-                url: Url()+"/admin/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
+                url: Url()+"/admin/post/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
                data:{
-                   id:id,
-                  
+                   i:id,
+                  status:1
+               }
+              });
+              console.log(response);
+              setLoading(true);
+        }
+        catch(err)
+        {
+
+        }
+    }   
+    const UnApproveHandle=async(id)=>{
+        try{
+            const response= await axios({
+                method: 'post',
+                withCredentials: true,
+                url: Url()+"/admin/post/verifyEvent/?id="+cookies.user.id+"&role="+cookies.user.role+"&token="+cookies.user.token,
+               data:{
+                   i:id,
+                  status:-1
                }
               });
               console.log(response);
@@ -64,11 +79,10 @@ for(let i=0;i<event.length;i++)
 {
     card.push( <tr>
        
-        <th  scope="row">{event[i].title}</th>
-        <td data-title="Date">{event[i].eventDate.split("T")[0].split("-").reverse().join("-")+" "+event[i].eventDate.split("T")[1].slice(0,5)}</td>
-        <td data-title="Worldwide Gross" >{event[i].authorId.personalDetails.name}</td>
-        <td data-title="Link" data-type="currency"><a href={"/details/"+event[i]._id} >See Details</a></td>
-        <td data-title="Action" > <button  className="btn btn-secondary" onClick={e=>ApproveHandle(event[i]._id)}>Approve</button></td>
+       <td data-title="Worldwide Gross" >{event[i].authorId.email}</td>
+        <td data-title="Date"><a href={"/interview_edit/"+event[i]._id}>Edit Link</a></td>
+        <td data-title="Link" data-type="currency"><a href={"/interview/"+event[i]._id} >See Details</a></td>
+        <td data-title="Action" > <button  className="btn btn-secondary" onClick={event[i].status==-1?e=>ApproveHandle(event[i]._id):e=>UnApproveHandle(event[i]._id)}>{event[i].status==-1?'Approve':'Reject'}</button></td>
      
       </tr>)
 }
@@ -85,13 +99,12 @@ return (
 
     <br/><br/><br/><br/><br/>
     <table class="responsive-table">
-<caption>Verify Event</caption>
+<caption>Verify Interview</caption>
 <thead>
   <tr>
  
-    <th scope="col">Event Title</th>
-    <th scope="col">Date</th>
-    <th scope="col">Organiser</th>
+  <th scope="col">Email</th>
+    <th scope="col">Edit </th>
     <th scope="col">Link</th>
     <th scope="col">Action</th>
    
@@ -108,4 +121,4 @@ return (
 
 )
     }
-    export default Approve;
+    export default InterviewApprove;

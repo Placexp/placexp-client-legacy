@@ -82,7 +82,8 @@ function Login({setauthpage}) {
                 role: response.data.data.role,
                 email: response.data.data.email,
                 id: response.data.data._id,
-                personalDetails:response.data.data.personalDetails
+                personalDetails:response.data.data.personalDetails,
+                token:response.data.token
               };
               const userCookie = JSON.stringify(user);
               setCookie('user', userCookie, { path: '/', maxAge: 86400 });
