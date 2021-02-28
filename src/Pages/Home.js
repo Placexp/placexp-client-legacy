@@ -32,7 +32,7 @@ const Home = () => {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <Link className=" dropdown-item" to="/interview">View</Link>
-        {State.isAuth && cookies.user.role=='A'&& <Link className="link" to="/interview_create">Add</Link>}
+        {State.isAuth && cookies.user.role=='A'&& <Link className="dropdown-item" to="/interview_create">Add</Link>}
         {State.isAuth && cookies.user.role=='A'&& (<Link className="link dropdown-item" to="/verifyinterview">Veriy</Link>)}   
          
           </div>
@@ -67,14 +67,7 @@ const Home = () => {
 </div>
 
 </div>
-<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+
 </div>
 <Floating/> 
     </div>
