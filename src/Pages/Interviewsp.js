@@ -15,7 +15,7 @@ useEffect(async() => {
     const response= await axios({
      method: 'get',
      withCredentials: true,
-     url: Url()+"/post/get",
+     url: Url()+"/post/get?i="+props.match.params.id,
      data:{
          i:props.match.params.id
      }
