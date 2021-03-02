@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState,Fragment } from "react";
-import SunEditor from 'suneditor-react';
+import ReactQuill from 'react-quill';
 import DateTimePicker from 'react-datetime-picker';
-import 'suneditor/dist/css/suneditor.min.css';
+import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {Url} from '../Url';
@@ -27,12 +27,7 @@ const companyL = [
   { label: 'SMEC', value: 'SMEC' },
   { label: 'ALL', value: 'ALL' }
 ];
-const editorRef = useRef();
-    useEffect(() => {
-        // Get underlining core object here
-        // Notice that useEffect is been used because you have to make sure the editor is rendered.
-        console.log(editorRef.current.editor.core);
-    }, []);
+
     const handleSubmit=async(e)=>
     {
       try{
@@ -97,7 +92,7 @@ console.log(err);
     };
 const displayForm=()=>{
 return (<div  className="card  w-100 h-100  px-6 p-4  "> 
-   <center> <h5 >Create Event</h5> </center><div
+   <center> <h5 >Create Interview</h5> </center><div
     style={{
       width: '1.9375em',
       margin: '0px auto',
@@ -117,7 +112,7 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Subject</label>
     <div class="col-sm-10">
-    <SunEditor ref={editorRef} setContent={sub} showToolbar={true}  onChange={hand} onScroll={true} />
+    <ReactQuill value={sub} onChange={setSub} theme="snow"/>
     </div>
   </div>
   
