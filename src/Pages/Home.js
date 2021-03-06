@@ -52,10 +52,10 @@ const Home = () => {
                 </ul>
               </div>
             </nav>
-
+<br/>
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-5">
                 <div class="jumbotron">
                   <h1 class="heading">Hi! Welcome to PlaceXP</h1>
                   <p class="lead">A professional website to keep you up to date with all the academic and placement information of Vellore Institute of Technology, Chennai.</p>
@@ -65,14 +65,15 @@ const Home = () => {
                 </div>
                 <br className="d-md-none" />
                 <br className="d-md-none" />
-                <div class="col-md-6">
+                <div class="col-md-7">
                   <img className="main-image w-100" src={bg2}  />
                 </div>
               </div>
             </div>
+            <br />
             </div>
         
-        <br />
+        <br/>
 
         <div class="features">
         <h1 class="headingf">Features</h1>
@@ -93,7 +94,7 @@ const Home = () => {
          
           <div class="feature2">
           <div class="row align-items-center">
-              <div class="col-md-5">
+              <div class="col-md-6">
               <div class="jumbotron">
                 <h1 class="heading">State-of-the-Art Design</h1>
                 <p class="lead">User-friendly and organised to the core while not compromising on the classiness. Let's just say it's modern and elegant, like you.</p>
@@ -109,7 +110,7 @@ const Home = () => {
           
           <div class="feature3">
             <div class="row align-items-center">
-              <div class="col-md-4">
+              <div class="col-md-5">
                 <img class="imagesl" src={feature3} />
               </div> <br className="d-md-none" />
                 <br className="d-md-none" />
