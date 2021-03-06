@@ -1,10 +1,8 @@
+#Home{
+  overflow: hidden;
+}
 .top {
-  background-color: #eaebfd;
-  margin-bottom: 30px;
-  max-width: 1280px;
-  min-width: 200px;
-  max-height: 1200px;
-  min-height: 577px;
+  background-color: #eaebfd; 
 }
 .topmost {
   background-color: #d8d9f5;
@@ -87,8 +85,6 @@
   overflow: hidden;
   padding: 6em 0 6em 0;
   background: #2b252c;
-  max-width: 1280px;
-  min-width: 200px;
   color: #fff;
 }
   .footer header {
@@ -165,3 +161,4 @@
     padding-top: 0;
   }
 }
+
