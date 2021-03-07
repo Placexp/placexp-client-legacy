@@ -41,6 +41,9 @@
   margin-left: 40px;
   height: 450px;
 }
+.container .jumbotron {
+  background-color: #eaebfd;
+}
 .container1 {
   margin-bottom: 15px;
   margin-top: 10px;
