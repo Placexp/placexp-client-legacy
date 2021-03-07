@@ -82,7 +82,7 @@ useEffect(async() => {
                        
                     </div>
                  <center>
-                 <iframe width="560" height="315" src={"https://www.youtube.com/embed/4RTLX2UaVzE"} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                 <iframe width="560" height="315" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                 </div>
                
 <br/> </div>)}</div>

@@ -1,3 +1,6 @@
+#Home{
+  overflow: hidden;
+}
 .top {
   background-color: #eaebfd;
   margin-bottom: 30px;
@@ -89,7 +92,6 @@
   background: #2b252c;
   max-width: 10000px;
   min-width: 10px;
-  color: #fff;
 }
   .footer header {
     text-align: center;

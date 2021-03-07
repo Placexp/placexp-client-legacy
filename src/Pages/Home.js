@@ -19,10 +19,6 @@ import feature3 from '../assets/Images/feature3.webp'
 const Home = () => {
 
   const { State, dispatch } = useContext(Context);
-  // var device = detectZoom.device();
-
-  // var zooming = 1.5/parseFloat({device});
-
   const [cookies, setCookie] = useCookies(['user']);
   return (
     <div>
