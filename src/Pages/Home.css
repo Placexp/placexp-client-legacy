@@ -1,8 +1,10 @@
-#Home{
-  overflow: hidden;
-}
 .top {
-  background-color: #eaebfd; 
+  background-color: #eaebfd;
+  margin-bottom: 30px;
+  max-width: 10000px;
+  min-width: 10px;
+  max-height: 1200px;
+  min-height: 577px;
 }
 .topmost {
   background-color: #d8d9f5;
@@ -33,6 +35,477 @@
   bottom: 5px;
   margin-top: 5px;
 }
+.imagesr {
+  margin-right: 40px;
+  height: 450px;
+}
+.imagesl {
+  margin-left: 40px;
+  height: 450px;
+}
+.container1 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding-top: 15px;
+}
+.container2 .jumbotron {
+  margin-left: 80px;
+  padding-top: 70px;
+  background-color: #eaebfd;
+}
+.sign1 {
+  margin-right: 5px;
+}
+.sign2 {
+  margin-left: 5px;
+}
+.headingf {
+  text-align: center;
+}
+.feature1 .jumbotron {
+  background-color: white;
+  margin-left: 0px;
+  padding-top: 90px;
+}
+
+.feature2 .jumbotron {
+  margin-left: 80px;
+  padding-top: 90px;
+  background-color: white;
+}
+.feature3 .jumbotron {
+  background-color: white;
+  margin-left: 0px;
+  padding-top: 90px;
+}
+.display-3 {
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 6em 0 6em 0;
+  background: #2b252c;
+  max-width: 10000px;
+  min-width: 10px;
+  color: #fff;
+}
+  .footer header {
+    text-align: center;
+    cursor: default;
+  }
+
+  .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
+    color: #fff;
+  }
+
+  .footer .contact {
+    text-align: center;
+  }
+
+    .footer .contact p {
+      text-align: center;
+      margin: 0 0 3em 0;
+    }
+
+.heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+}
+.headingf {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 400px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+  }
+  .container2 .imagesr {
+    height: 250px;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 250px;
+    margin-right: 0;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 250px;
+    padding-bottom: 0;
+    margin-top: 40px;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 75%;
+  }
+}
+
+@media only screen and (min-device-width: 400px) and (max-device-width: 500px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+  }
+  .container2 .imagesr {
+    height: 250px;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 250px;
+    margin-right: 0;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 250px;
+    padding-bottom: 0;
+    margin-top: 40px;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+}
+@media only screen and (min-device-width: 500px) and (max-device-width: 560px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+  }
+  .container2 .imagesr {
+    height: 250px;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 250px;
+    margin-right: 0;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 250px;
+    padding-bottom: 0;
+    margin-top: 40px;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 120%;
+  }
+}
+@media only screen and (min-device-width: 561px) and (max-device-width: 610px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+  }
+  .container2 .imagesr {
+    height: 250px;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 250px;
+    margin-right: 0;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 270px;
+    padding-bottom: 0;
+    margin-top: 40px;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 130%;
+  }
+}
+@media only screen and (min-device-width: 611px) and (max-device-width: 659px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .container2 .imagesr {
+    margin-left: 0;
+    margin-right: 0;
+    height: 300px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 300px;
+    padding-left: 10%;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+    padding-left: 20%;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 320px;
+    padding-bottom: 0;
+    margin-top: 40px;
+    padding-left: 10%;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 120%;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-device-width: 660px) and (max-device-width: 700px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .container2 .imagesr {
+    margin-left: 0;
+    margin-right: 0;
+    height: 300px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 300px;
+    padding-left: 10%;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+    padding-left: 20%;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 320px;
+    padding-bottom: 0;
+    margin-top: 40px;
+    padding-left: 10%;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 110%;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-device-width: 701px) and (max-device-width: 766px) {
+  .navbar{
+    padding-left: 20px;
+  }
+  .container2 .jumbotron {
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .container2 .imagesr {
+    margin-left: 0;
+    margin-right: 0;
+    height: 350px;
+    padding-left: 14%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .container2 .col {
+    margin-right: 0px;
+  }
+  .feature1 .imagesl {
+    height: 300px;
+
+    padding-left: 15%;
+  }
+  .feature1 .jumbotron {
+    text-align: center;
+    padding-top: 0px;
+  }
+  .feature2 .imagesr {
+    height: 300px;
+    margin-right: 0;
+    position: relative;
+    bottom: 300px;
+    padding-left: 20%;
+  }
+  .feature2 .jumbotron {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 0px;
+    position: relative;
+    top: 350px;
+  }
+  .feature3 .imagesl {
+    height: 320px;
+    padding-bottom: 0;
+    margin-top: 40px;
+    padding-left: 10%;
+  }
+  .feature3 .jumbotron {
+    text-align: center;
+    padding-top: 0;
+  }
+  .main {
+    zoom: 106%;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-device-width: 767px) and (max-device-width: 796px) {
+  .main {
+    zoom: 70%;
+  }
+  .container2 {
+    padding-top: 60px;
+    height: 600px;
+  }
+}
+@media only screen and (min-device-width: 797px) and (max-device-width: 860px) {
+  .main {
+    zoom: 76%;
+  }
+  .container2 {
+    padding-top: 40px;
+    height: 550px;
+  }
+}
+@media only screen and (min-device-width: 860px) and (max-device-width: 1024px) {
+  .main {
+    zoom: 80%;
+  }
+}
+
+
 .imagesr {
   margin-right: 40px;
   height: 450px;
