@@ -8,22 +8,22 @@ import Floating from "../Component/Layout/Floating"
 import Context from '../context';
 import { useCookies } from 'react-cookie';
 import './Home.css';
+import detectZoom from "detect-zoom";
 
 import bg2 from '../assets/Images/bg11.webp'
 import feature1 from '../assets/Images/feature1.webp'
 import feature2 from '../assets/Images/feature2.webp'
 import feature3 from '../assets/Images/feature3.webp'
 
+
 const Home = () => {
 
   const { State, dispatch } = useContext(Context);
-
-
   const [cookies, setCookie] = useCookies(['user']);
   return (
-    <div id="Home">
-      <div class="main ">
-        <div className="top">
+    <div>
+      <div class="main">
+        <div class="top">
           <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand"><img src={logo} height="70px" align="left"/></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,38 +52,34 @@ const Home = () => {
                 </ul>
               </div>
             </nav>
-<br/>
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-md-5">
+
+            <div class="container2">
+              <div class="row no-gutters">
+                <div class="col">
                 <div class="jumbotron">
                   <h1 class="heading">Hi! Welcome to PlaceXP</h1>
                   <p class="lead">A professional website to keep you up to date with all the academic and placement information of Vellore Institute of Technology, Chennai.</p>
-                  <a class="sign1 btn btn-outline-primary btn-lg" href="/auth" role="button">Sign In</a>
-                  <a class="sign1 btn btn-outline-primary btn-lg" href="/auth" role="button">Sign Up</a>
+                  {State.isAuth && cookies.user.role !=='A'&& (<Link className="nav-link" to="/logout"><a class="sign1 btn btn-outline-primary btn-lg" href="/auth" role="button">Sign In</a></Link>)}
+                  {State.isAuth && cookies.user.role !=='A'&& (<Link className="nav-link" to="/logout"><a class="sign1 btn btn-outline-primary btn-lg" href="/auth" role="button">Sign Up</a></Link>)}
                 </div>
                 </div>
-                <br className="d-md-none" />
-                <br className="d-md-none" />
-                <div class="col-md-7">
-                  <img className="main-image w-100" src={bg2}  />
+                <div class="col">
+                  <img class="imagesr" src={bg2} height="450px" align="center"/>
                 </div>
               </div>
             </div>
-            <br />
-            </div>
+          </div>
         
-        <br/>
+        <br />
 
         <div class="features">
         <h1 class="headingf">Features</h1>
           <div class="feature1">
-          <div class="row align-items-center">
-            <div class="col-md-5">
-              <img class="imagesl" src={feature1} />
-            </div> <br className="d-md-none" />
-                <br className="d-md-none" />
-            <div class="col-md-7">
+          <div class="row no-gutters">
+            <div class="col">
+              <img class="imagesl" src={feature1} align="center"/>
+            </div>
+            <div class="col">
               <div class="jumbotron">
                 <h1 class="heading">Up-to-Date Information</h1>
                 <p class="lead">Keeps you vigilant about the latest events and placement scenarios for different companies. The data is frequently updated to match the latest trends in the society.</p>
@@ -93,28 +89,26 @@ const Home = () => {
           </div>
          
           <div class="feature2">
-          <div class="row align-items-center">
-              <div class="col-md-6">
+          <div class="row no-gutters">
+              <div class="col">
               <div class="jumbotron">
                 <h1 class="heading">State-of-the-Art Design</h1>
                 <p class="lead">User-friendly and organised to the core while not compromising on the classiness. Let's just say it's modern and elegant, like you.</p>
               </div>
-              </div> <br className="d-md-none" />
-                <br className="d-md-none" />
-              <div class="col-md-2">
-                <img class="imagesr" src={feature2} />
+              </div>
+              <div class="col">
+                <img class="imagesr" src={feature2} align="center"/>
               </div>
             </div>
           </div>
           
           
           <div class="feature3">
-            <div class="row align-items-center">
-              <div class="col-md-5">
-                <img class="imagesl" src={feature3} />
-              </div> <br className="d-md-none" />
-                <br className="d-md-none" />
-              <div class="col-md-7">
+            <div class="row no-gutters">
+              <div class="col">
+                <img class="imagesl" src={feature3} align="center"/>
+              </div>
+              <div class="col">
                 <div class="jumbotron">
                   <h1 class="heading">Socially Connected</h1>
                   <p class="lead">Lets you know the opinions and comments your colleagues have on an event or company and allows you to freely discuss your opinion.</p>
@@ -125,24 +119,21 @@ const Home = () => {
         </div>
        
 
-        <div class="footer ">
+        <div class="footer">
 					<div class="container">
-						<div class="row">
-            <div class="col-md-8">
+						<div class="row no-gutters">
+									<section class="contact col-12">
 										<header>
-											<h1 class="final heading ">Having unresolved queries?</h1>
+											<h1 class="final heading">Having unresolved queries?</h1>
 										</header>
-                    </div>
-                    <div class="col-md-4">
-										<p class="lead ">Contact Us</p>
-                    
+										<p class="lead">Contact Us</p>
                     <div class="btn-group" role="group" aria-label="Basic example">
                       <a type="button" class="btn btn-outline-light btn-lg"><i class="fab fa-twitter"></i></a>
                       <a type="button" class="btn btn-outline-light btn-lg"><i class="fab fa-facebook-f"></i></a>
                       <a type="button" href="https://www.instagram.com/placexpvitc/" class="btn btn-outline-light btn-lg"><i class="fab fa-instagram"></i></a>
                       <a type="button" href="https://www.linkedin.com/company/place-xp-vitc/" class="btn btn-outline-light btn-lg"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-								</div>
+									</section>
 							</div>
 						</div>
 					</div>
