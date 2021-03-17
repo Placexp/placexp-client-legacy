@@ -1,0 +1,30 @@
+[
+    {
+      "name": "Wipro Interview Experience for Internship",
+      "branch": "cse",
+      "company": "Wipro",
+      "difficulty": "easy"
+      
+    },
+    {
+        "name": "Paypal Interview Exerience",
+      "branch": "cse",
+      "company": "Paypal",
+      "difficulty": "medium"
+     
+    },
+    {
+        "name": "Adobe Interview Experience (for women)",
+      "branch": "cse",
+      "company": "Adobe",
+      "difficulty": "hard"
+     
+    },
+    {
+        "name": "Amazon Interview Experience (off campus)",
+      "branch": "cse",
+      "company": "Amazon",
+      "difficulty": "hard"
+     
+    }
+]
