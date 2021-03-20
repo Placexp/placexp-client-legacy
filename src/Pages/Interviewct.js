@@ -31,7 +31,7 @@ const response= await axios({
   data:{
     title:title,
     subject:sub,
-   company:company,
+   company:company.value,
    link:link,
    
   }
@@ -117,7 +117,6 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
                     value={company} 
                     onChange={option => setCompany(option)}
                     options={companyL}
-                    isMulti
                     isSearchable
                     required
                 />
@@ -127,6 +126,7 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
               autoComplete="off"
               style={{ opacity: 0, height: 0 }}
               value={company}
+
               required
             />
             )}
