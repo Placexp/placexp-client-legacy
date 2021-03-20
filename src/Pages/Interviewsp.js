@@ -3,6 +3,7 @@ import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Context from '../context';
+import companyJ from './company.json';
 import {Url} from '../Url';
 import Header from "../Component/Layout/Header";
 import { data } from "jquery";
@@ -50,7 +51,7 @@ useEffect(async() => {
                     <div class="card">
                         <div class="card-body">
                             <div class="h7 text-muted">About Company Name : {isLoading?"loading":event[0].company}<br/>
-                            <a href="https://www.linkedin.com/company/chubb?trk=companies_directory" targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
+                            <a href={isLoading?"loading":companyJ[event[0].company]} targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
                             <div class="h7">
                             </div>
                         </div>
