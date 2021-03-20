@@ -20,7 +20,7 @@ const [link,setLink]=useState('');
 const [company,setCompany]=useState('');
 const[isLoading,setLoading]=useState(true);
 const [cookies, setCookie] = useCookies(['user']);
-if(cookies.user.role!='A')props.history.push("/logout")
+
 const companyL = [
   { label: 'SCE', value: 'SCE' },
   { label: 'SCOPE', value: 'SCOPE' },

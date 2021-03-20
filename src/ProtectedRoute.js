@@ -2,21 +2,20 @@ import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Context from './context';
-
+const jwt    = require('jsonwebtoken')
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 	const { state } = useContext(Context);
-	const [cookies] = useCookies(['user']);
-  if(cookies.user){
-    state.isAuth=true;
+	const [cookies,removeCookie] = useCookies(['user']);
+  var check='y'
+  if(cookies.user&&jwt.verify(cookies.user.role,"placexp@123").role!="A"){
+    check='n'
   }
-  else{
-    state.isAuth=false;
-  }
+  
 
   return (
     <Route
       render={props =>
-        !state.isAuth ? <Redirect to="/auth" /> : <Component {...props} />
+        check=='n' ? <Redirect to="/logout" /> : <Component {...props} />
       }
       {...rest}
     />
