@@ -5,7 +5,7 @@ import DateTimePicker from "react-datetime-picker";
 import "suneditor/dist/css/suneditor.min.css";
 import axios from "axios";
 import FuzzySearch from "fuzzy-search";
-import interviewsData from "./interviewsData.json";
+
 import Fuse from "fuse.js";
 import Swal from "sweetalert2";
 import { Url } from "../Url";
@@ -20,23 +20,48 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 const Interview = () => {
   const [query, updateQuery] = useState("");
   const [data, setData] = useState("");
+  const [isLoading,setLoading]=useState(true);
+ 
+  useEffect(async() => {
+        
+    const response= await axios({
+     method: 'post',
+     withCredentials: true,
+     url: Url()+"/post/getall",
+   });
+   console.log(response);
+   setInterview(response.data.data);
+  
+  
+   setLoading(false)
+ }, [isLoading]);
+ const [interview ,setInterview]=useState([]);
+ const fuzzySearcher = new FuzzySearch(interview, ['postTitle','company']);
+ const [search,setSearch]=useState('');
+  const result = fuzzySearcher.search(search);
+  const dropDown=()=>{
+    let ls=[];
+    let ans=[];
+    for(let i=0;i<interview.length;i++)
+    {
+      if(ls.indexOf(interview[i].company)==-1)
+      {
+        ls.push(interview[i].company);
+        ans.push( <Dropdown.Item  eventKey={interview[i].company}>
+        {interview[i].company}
+      </Dropdown.Item>)
+      }
+    }
+    return ans;
+  };
+  const history = useHistory();
+  
+  const goToEvent = i => {
 
-  const fuse = new Fuse(interviewsData, {
-    keys: ["name", "branch", "company", "difficulty"],
-    includeScore: true,
-  });
-
-  const results = fuse.search(query);
-  const interviewResults = query
-    ? results.map((interview) => interview.item)
-    : interviewsData;
-
-  function onSearch({ currentTarget }) {
-    updateQuery(currentTarget.value);
-  }
-
+    history.push("/interview/" + i);
+   };
   const handleSelect = (e) => {
-    updateQuery(e);
+   setSearch(e)
   };
 
   return (
@@ -52,44 +77,42 @@ const Interview = () => {
           <div className="search_filter">
             <form className="search">
               <label>Search</label>
-              <input type="text" value={query} onChange={onSearch} />
-            </form>
+              <input type="text"value={search} onChange={e=>setSearch(e.target.value)}/>
+              </form>
 
             <div className="filterDiv">
               <DropdownButton
                 id="dropdown-item-button"
                 title="Filter"
                 onSelect={handleSelect}
-                value={query}
               >
-                <Dropdown.Item value="Amazon" as="button">
-                  Amazon
-                </Dropdown.Item>
-                <Dropdown.Item as="button">Wipro</Dropdown.Item>
-                <Dropdown.Item as="button">Paypal</Dropdown.Item>
-                <Dropdown.Item as="button">Adobe</Dropdown.Item>
+               {isLoading?(<Dropdown.Item  eventKey="">
+Loading
+      </Dropdown.Item>):dropDown()}
+                
               </DropdownButton>
             </div>
+            
           </div>
 
           <div className="Int__section">
             <div className="interviews">
-              {interviewResults.map((interview) => {
-                const { name, branch, company, difficulty } = interview;
-                return (
-                  <div className="Int__card">
-                    <h2 className="Int__name">{name}</h2>
+              {result.length>0?result.map((item)=>(
+               
+               
+                  <div className="Int__card" onClick={e=>goToEvent(item._id)}>
+                    <h2 className="Int__name">{item.postTitle}</h2>
                     <div className="tag__area">
                       <h3 className="Int__tag tag__header">tags: </h3>
                       <div className="Int__tag">
-                        <div className="tag">{branch}</div>
-                        <div className="tag">{company}</div>
-                        <div className="tag">{difficulty}</div>
+                        
+                        <div className="tag">{item.company}</div>
+                        
                       </div>
                     </div>
                   </div>
-                );
-              })}
+               
+                )):"No Result Found . Write us at placexp@gmail.com"}
             </div>
           </div>
         </div>

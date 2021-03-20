@@ -39,17 +39,18 @@ useEffect(async() => {
 
  return (
 
-    <div className="container">
+    <div >
         <Header/>
     <br/><br/>
     
     
         <div class="container-fluid gedf-wrapper">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <div class="h7 text-muted">Company Name : {isLoading?"loading":event[0].company}</div>
+                            <div class="h7 text-muted">About Company Name : {isLoading?"loading":event[0].company}<br/>
+                            <a href="https://www.linkedin.com/company/chubb?trk=companies_directory" targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
                             <div class="h7">
                             </div>
                         </div>

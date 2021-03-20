@@ -70,11 +70,11 @@ catch(err)
           <Route path="/profile" component={withRouter(Profile)} />
           <Route path="/signup/club/:id" component={withRouter(SignupC)} />
          
-          <Route path="/interview_create" component={withRouter(Interviewct)} />
+          <ProtectedRoute path="/interview_create" component={withRouter(Interviewct)} />
           <Route path="/interview/:id" component={withRouter(Interviewsp)} />
-          <Route path="/interview_edit/:id" component={withRouter(Interviewed)} />
+          <ProtectedRoute path="/interview_edit/:id" component={withRouter(Interviewed)} />
           <Route path="/interview" component={withRouter(Interview)} />
-          <Route path="/verifyinterview" component={withRouter(InterviewApprove)} />
+          <ProtectedRoute path="/verifyinterview" component={withRouter(InterviewApprove)} />
           <Route
               path="/logout"
               render={rProps => <Auth {...rProps} defaultRoutine="logout" />}

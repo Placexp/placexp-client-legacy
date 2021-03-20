@@ -5,11 +5,16 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/Images/logo.png";
 import { useCookies } from "react-cookie";
 import "./Header.css";
-
+import {decode} from '../../Utils'
+const jwt    = require('jsonwebtoken')
 const Header = () => {
   const { State, dispatch } = useContext(Context);
-
   const [cookies, setCookie] = useCookies(["user"]);
+  
+  const role= cookies.user==null?'':jwt.verify(cookies.user.role,"placexp@123").role;
+  
+    
+
   return (
     <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand">
@@ -45,12 +50,12 @@ const Header = () => {
               Interviews
             </a>
             <div class="dropdown-menu">
-              {State.isAuth && cookies.user.role === "A" && (
+              {State.isAuth && role=== "A" && (
                 <Link className="dropdown-item" to="/interview_create">
                   Add Interviews
                 </Link>
               )}
-              {State.isAuth && cookies.user.role === "A" && (
+              {State.isAuth && role === "A" && (
                 <Link className="dropdown-item" to="/verifyinterview">
                   Verify Interviews
                 </Link>
@@ -66,7 +71,7 @@ const Header = () => {
             </a>
           </li>
           <li class="nav-item">
-            {State.isAuth && cookies.user.role === "A" && (
+            {cookies.user  && (
               <Link className="nav-link" to="/logout">
                 <font color="red">
                   <i class="fas fa-power-off"></i>
