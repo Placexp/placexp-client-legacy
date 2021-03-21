@@ -1,5 +1,6 @@
 import React ,{useContext,useState,useEffect} from "react";
 import { useCookies } from 'react-cookie';
+import './interviewsp.css'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Context from '../context';
@@ -45,47 +46,38 @@ useEffect(async() => {
 }
  , [isLoading]);
 
-
+// fake articles arrray
+const articles =[{title:"Amazon Interview Experience For Software Developer Intern"},{title:"Minimum number of pigs required to find the poisonous bucket"},
+                         {title:"Amazon Interview Experience for SWE Summer Internship 2021"},{title:"Amazon Interview Experience for SDE Internship (On-Campus)"}]
  return (
 
     <div >
         <Header/>
-    <br/><br/>
+   
     
         <div class="container-fluid gedf-wrapper">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="h7 text-muted">About Company Name : {isLoading?"loading":event[0].company}<br/>
-                            <a href={isLoading?"loading":companyJ[event[0].company]} targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
-                            <div class="h7">
-                            </div>
-                        </div>
-                      
-                    </div>
-                </div>
-             
-                <div class="col-md-8 gedf-main">
+            <div class="row  b_color">
+            <div class="col-md-8 gedf-main right_col m-3 p-3">
                     {isLoading?"loading":(
-                <div><div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
+                <div><div class="">
+                    <div >
+                        <div class="d-flex justify-content-between align-items-center p-4">
                           
                             <div>
-                            {event[0].postTitle}
+                             <h1>{event[0].postTitle}</h1>
+                             <a class="font-italic text-secondary" href={isLoading?"loading":companyJ[event[0].company]} targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a>
                             </div>
                         </div>
-
+                       
                     </div>
-                    <div class="card-body">
+                    <div class="">
                       
-                        <a class="card-link" href="#">
+                        <a class="" href="#">
                          
-        <h5 class="card-title"></h5>
+                    <h5 class=""></h5>
                         </a>
                       
-                        <p class="card-text " dangerouslySetInnerHTML={{__html:event[0].postBody}}>
+                        <p class=" " dangerouslySetInnerHTML={{__html:event[0].postBody}}>
                             
                         </p>
                        
@@ -99,11 +91,33 @@ useEffect(async() => {
           shortname={disqusShortname}
           config={disqusConfig}
         />
+            <br/> </div>)}
+            </div>
+            {/* <div class=" mt-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="h7 text-muted">About Company Name : {isLoading?"loading":event[0].company}<br/>
+                            <a href={isLoading?"loading":companyJ[event[0].company]} targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
+                            <div class="h7">
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div> */}
                 
+                <div class="col-md-3 mt-3">
+                    <div className="d-flex flex-column   ">   
+                        <h4 style={{color:"#2b6dad"}}>Related Articles</h4> 
+                        <hr style={{marginTop:"0"}}/>
+                        {articles.map(article=>{
+                            return <span>{article.title}</span>
+                        })}
+                     </div>
+                </div>
+               
+               
 
-<br/> </div>)}</div>
-
-</div>
+        </div>
                 </div>
                 </div>
  );
