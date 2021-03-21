@@ -7,10 +7,18 @@ import companyJ from './company.json';
 import {Url} from '../Url';
 import Header from "../Component/Layout/Header";
 import { data } from "jquery";
+import Disqus from "disqus-react"
+import ReactDisqusComments from 'react-disqus-comments';
 const Interviewsp = (props) => {
 const [isLoading,setLoading]=useState(true);
 const [event,setEvent]=useState([]);
 const [cookies, setCookie] = useCookies(['user']);
+const disqusShortname = "placexp-2"
+const disqusConfig = {
+  url: "https://placexp.netlify.app/interview",
+  identifier: "placexp1",
+  title: "Title of Your Article"
+}
 useEffect(async() => {
         
     const response= await axios({
@@ -86,8 +94,14 @@ useEffect(async() => {
                  <center>
                  <iframe width="560" height="315" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
                 </div>
-               
+                <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+                
+
 <br/> </div>)}</div>
+
 </div>
                 </div>
                 </div>
