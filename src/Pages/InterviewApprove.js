@@ -80,6 +80,7 @@ for(let i=0;i<event.length;i++)
     card.push( <tr>
        
        <td data-title="Worldwide Gross" >{event[i].authorId.email}</td>
+       <td data-title="Worldwide Gross" >{event[i].company}</td>
         <td data-title="Date"><a href={"/interview_edit/"+event[i]._id}>Edit Link</a></td>
         <td data-title="Link" data-type="currency"><a href={"/interview/"+event[i]._id} >See Details</a></td>
         <td data-title="Action" > <button  className="btn btn-secondary" onClick={event[i].status==-1?e=>ApproveHandle(event[i]._id):e=>UnApproveHandle(event[i]._id)}>{event[i].status==-1?'Approve':'Reject'}</button></td>
@@ -104,6 +105,7 @@ return (
   <tr>
  
   <th scope="col">Email</th>
+  <th scope="col">Company</th>
     <th scope="col">Edit </th>
     <th scope="col">Link</th>
     <th scope="col">Action</th>

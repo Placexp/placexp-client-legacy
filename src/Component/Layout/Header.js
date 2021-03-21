@@ -1,44 +1,87 @@
-import React,{useContext} from "react";
-import Context from '../../context';
+import React, { useContext } from "react";
+import Context from "../../context";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import {Link} from 'react-router-dom';
-import logo from '../../assets/Images/logo.png'
-import { useCookies } from 'react-cookie';
+import { Link } from "react-router-dom";
+import logo from "../../assets/Images/logo.png";
+import { useCookies } from "react-cookie";
+import "./Header.css";
+import {decode} from '../../Utils'
+const jwt    = require('jsonwebtoken')
 const Header = () => {
-    const { State, dispatch } = useContext(Context);
-   
+  const { State, dispatch } = useContext(Context);
+  const [cookies, setCookie] = useCookies(["user"]);
+  
+  const role= cookies.user==null?'':jwt.verify(cookies.user.role,"placexp@123").role;
+  
+    
 
-    const [cookies, setCookie] = useCookies(['user']);
   return (
-    <header id="head">
-      <Navbar variant="light" expand="lg" collapseOnSelect>
-        <Container>
-          <Navbar.Brand href="/"><img style={{width:"50px"}}  src={logo}/>Placexp</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-             {/* { <Nav.Link href="about">About Us</Nav.Link>
-              <Nav.Link href="service">Services</Nav.Link>
-              } */}
-              <Nav.Link > </Nav.Link>
-            { /* <NavDropdown title="Events" id="basic-nav-dropdown">
-              <NavDropdown.Item ><Link className="link" to="/events">View Events</Link></NavDropdown.Item>
-              {State.isAuth && cookies.user.role!='S'&& (<NavDropdown.Item ><Link className="link" to="/event/new">Create Event</Link></NavDropdown.Item>)}
-              {State.isAuth && cookies.user.role=='A'&& ( <NavDropdown.Item ><Link className="link" to="/verify">Verify Event</Link></NavDropdown.Item>)}
-                </NavDropdown>*/
-}
-              <NavDropdown title="Interview" id="basic-nav-dropdown2"><NavDropdown.Item ><Link className="link" to="/interview">Interview</Link></NavDropdown.Item>{State.isAuth && cookies.user.role=='A'&& <NavDropdown.Item ><Link className="link" to="/interview_create">Add Interview</Link></NavDropdown.Item>}
-              {State.isAuth && cookies.user.role=='A'&& ( <NavDropdown.Item ><Link className="link" to="/verifyinterview">Verify Interview</Link></NavDropdown.Item>)}
-               </NavDropdown>
-            {
-             // <Nav.Link > <Link className="link" to="/doubt">Doubt</Link></Nav.Link>
-            }
-            {State.isAuth?( <NavDropdown title={cookies.user.personalDetails.name} id="basic-nav-dropdown2"><NavDropdown.Item ><Link className="link" to="/logout">Logout</Link></NavDropdown.Item> </NavDropdown>):(<Nav.Link><Link className="link" to="/auth">Sign In</Link></Nav.Link>)
-            }</Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </header>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand">
+        <img src={logo} height="70px" align="left" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">
+              Home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Interviews
+            </a>
+            <div class="dropdown-menu">
+              {State.isAuth && role=== "A" && (
+                <Link className="dropdown-item" to="/interview_create">
+                  Add Interviews
+                </Link>
+              )}
+              {State.isAuth && role === "A" && (
+                <Link className="dropdown-item" to="/verifyinterview">
+                  Verify Interviews
+                </Link>
+              )}
+              <Link className=" dropdown-item" to="/interview">
+                View Interviews
+              </Link>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Contact">
+              Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
+            {cookies.user  && (
+              <Link className="nav-link" to="/logout">
+                <font color="red">
+                  <i class="fas fa-power-off"></i>
+                </font>
+              </Link>
+            )}
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 

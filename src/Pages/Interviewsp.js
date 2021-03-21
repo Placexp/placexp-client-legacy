@@ -3,13 +3,22 @@ import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Context from '../context';
+import companyJ from './company.json';
 import {Url} from '../Url';
 import Header from "../Component/Layout/Header";
 import { data } from "jquery";
+import Disqus from "disqus-react"
+import ReactDisqusComments from 'react-disqus-comments';
 const Interviewsp = (props) => {
 const [isLoading,setLoading]=useState(true);
 const [event,setEvent]=useState([]);
 const [cookies, setCookie] = useCookies(['user']);
+const disqusShortname = "placexp-2"
+const disqusConfig = {
+  url: "https://placexp.netlify.app/interview",
+  identifier: "placexp1",
+  title: "Title of Your Article"
+}
 useEffect(async() => {
         
     const response= await axios({
@@ -39,17 +48,17 @@ useEffect(async() => {
 
  return (
 
-    <div className="container">
+    <div >
         <Header/>
     <br/><br/>
     
-    
         <div class="container-fluid gedf-wrapper">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <div class="h7 text-muted">Company Name : {isLoading?"loading":event[0].company}</div>
+                            <div class="h7 text-muted">About Company Name : {isLoading?"loading":event[0].company}<br/>
+                            <a href={isLoading?"loading":companyJ[event[0].company]} targer="_blank"> {isLoading?"loading":event[0].company +" LinkedIn Profile"} </a></div>
                             <div class="h7">
                             </div>
                         </div>
@@ -82,10 +91,18 @@ useEffect(async() => {
                        
                     </div>
                  <center>
-                 <iframe width="560" height="315" src={"https://www.youtube.com/embed/4RTLX2UaVzE"} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                 <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+               <br/>
                 </div>
-               
+                <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+                
+
 <br/> </div>)}</div>
+
 </div>
                 </div>
                 </div>

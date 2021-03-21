@@ -1,75 +1,168 @@
 import React, { useContext } from "react";
 import Header from "../Component/Layout/Header";
 import Slider from "../Component/Layout/Slider";
-import s1 from '../assets/Images/slider1.png'
-import {Link} from 'react-router-dom';
-import logo from '../assets/Images/logo.png'
-import s2 from '../assets/Images/Slider2.png'
-import Floating from "../Component/Layout/Floating"
-import Context from '../context';
-import { useCookies } from 'react-cookie';
+import s1 from "../assets/Images/slider1.png";
+import { Link } from "react-router-dom";
+import logo from "../assets/Images/logo-black.png";
+import Floating from "../Component/Layout/Floating";
+import Context from "../context";
+import { useCookies } from "react-cookie";
+import "./Home.css";
+
+import bg2 from "../assets/Images/bg11.webp";
+import feature1 from "../assets/Images/feature1.webp";
+import feature2 from "../assets/Images/feature2.webp";
+import feature3 from "../assets/Images/feature3.webp";
+
 const Home = () => {
-
   const { State, dispatch } = useContext(Context);
-   
 
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie] = useCookies(["user"]);
   return (
-    <div >
-    
-   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <div class="container-fluid">
-   <Link className="nav-link" to="/"><img style={{width:"50px"}}  src={logo}/>Placexp</Link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Interview
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <Link className=" dropdown-item" to="/interview">View</Link>
-        {State.isAuth && cookies.user.role=='A'&& <Link className="dropdown-item" to="/interview_create">Add</Link>}
-        {State.isAuth && cookies.user.role=='A'&& (<Link className="link dropdown-item" to="/verifyinterview">Veriy</Link>)}   
-         
+    <div id="Home">
+      <div class="main ">
+        <div className="top">
+          <Header />
+          <br />
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <div class="jumbotron">
+                  <h1 class="heading">Hi! Welcome to PlaceXP</h1>
+                  <p class="lead">
+                    A professional website to keep you up to date with all the
+                    academic and placement information of Vellore Institute of
+                    Technology, Chennai.
+                  </p>
+                  <a
+                    class="sign1 btn btn-outline-primary btn-lg"
+                    href="/auth"
+                    role="button"
+                  >
+                    Sign In
+                  </a>
+                  <a
+                    class="sign1 btn btn-outline-primary btn-lg"
+                    href="/auth"
+                    role="button"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+              <br className="d-md-none" />
+              <br className="d-md-none" />
+              <div class="col-md-7">
+                <img className="main-image w-100" src={bg2} />
+              </div>
+            </div>
           </div>
-        </li>
-<li class="nav-item">
-{!State.isAuth && cookies.user==null&& (<Link className="nav-link " to="/auth">SignIn</Link>)}
-          {State.isAuth && cookies.user.role=='A'&& (<Link className="nav-link " to="/logout"><font color="red">Logout</font></Link>)}
-        </li>
-</ul>
-</div>
-</div>
-</nav>
+          <br />
+        </div>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <br />
 
-</ol>
-<div class="carousel-inner">
-    <div class="carousel-item active"  style={{backgroundImage:s1}}>
-      <img class="d-block w-100"  height="625px" src={s1} alt="First slide"/>
-      <div class="carousel-caption d-none d-md-block">
-    
-</div>
-</div>
-<div class="carousel-item">
-      <img class="d-block w-100"  height="625px"  src={s2} alt="Second slide"/>
-      <div class="carousel-caption d-none d-md-block">
-      
-</div>
-</div>
+        <div class="features">
+          <h1 class="headingf">Features</h1>
+          <div class="feature1">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img class="imagesl" src={feature1} />
+              </div>{" "}
+              <br className="d-md-none" />
+              <br className="d-md-none" />
+              <div class="col-md-7">
+                <div class="jumbotron">
+                  <h1 class="heading">Up-to-Date Information</h1>
+                  <p class="lead">
+                    Keeps you vigilant about the latest events and placement
+                    scenarios for different companies. The data is frequently
+                    updated to match the latest trends in the society.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-</div>
+          <div class="feature2">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="jumbotron">
+                  <h1 class="heading">State-of-the-Art Design</h1>
+                  <p class="lead">
+                    User-friendly and organised to the core while not
+                    compromising on the classiness. Let's just say it's modern
+                    and elegant, like you.
+                  </p>
+                </div>
+              </div>{" "}
+              <br className="d-md-none" />
+              <br className="d-md-none" />
+              <div class="col-md-2">
+                <img class="imagesr" src={feature2} />
+              </div>
+            </div>
+          </div>
 
-</div>
-<Floating/> 
+          <div class="feature3">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img class="imagesl" src={feature3} />
+              </div>{" "}
+              <br className="d-md-none" />
+              <br className="d-md-none" />
+              <div class="col-md-7">
+                <div class="jumbotron">
+                  <h1 class="heading">Socially Connected</h1>
+                  <p class="lead">
+                    Lets you know the opinions and comments your colleagues have
+                    on an event or company and allows you to freely discuss your
+                    opinion.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <header>
+                  <h1 class="final heading ">Having unresolved queries?</h1>
+                </header>
+              </div>
+              <div class="col-md-4">
+                <p class="lead ">Contact Us</p>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a type="button" class="btn btn-outline-light btn-lg">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a type="button" class="btn btn-outline-light btn-lg">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    type="button"
+                    href="https://www.instagram.com/placexpvitc/"
+                    class="btn btn-outline-light btn-lg"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    type="button"
+                    href="https://www.linkedin.com/company/place-xp-vitc/"
+                    class="btn btn-outline-light btn-lg"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

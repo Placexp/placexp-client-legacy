@@ -1,10 +1,9 @@
 import React, {useRef, useEffect, useState,Fragment } from "react";
-import SunEditor from 'suneditor-react';
-import 'suneditor/dist/css/suneditor.min.css';
+
 import axios from 'axios';
 import Select from 'react-select';
 import { useCookies } from 'react-cookie';
-
+import ReactQuill from 'react-quill';
 import {Url} from '../../Url';
 const CreateDoubt=()=>{
   
@@ -21,12 +20,7 @@ const optionVis = [
   { label: 'SMEC', value: 'SMEC' },
   { label: 'ALL', value: 'ALL' }
 ];
-const editorRef = useRef();
-    useEffect(() => {
-        // Get underlining core object here
-        // Notice that useEffect is been used because you have to make sure the editor is rendered.
-        console.log(editorRef.current.editor.core);
-    }, []);
+
     const handleSubmit=async(e)=>
     {
       try{
@@ -72,7 +66,7 @@ return (<div  className=" h-75  px-4 p-3  ">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Subject</label>
     <div class="col-sm-10">
-    <SunEditor ref={editorRef} showToolbar={false} setContent={sub}  onChange={hand} onScroll={true} />
+    <ReactQuill value={sub} onChange={setSub} theme="snow"/>
     </div>
   </div>
   <div class="form-group row">
