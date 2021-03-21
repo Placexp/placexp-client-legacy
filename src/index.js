@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-//import * as serviceWorker from "../public/serviceWorker";
+import * as serviceWorker from "./serviceWorker";
 //import reportWebVitals from './reportWebVitals';
 import Context from './context';
 import reducer from './reducer';
@@ -101,4 +101,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 //reportWebVitals();
-//serviceWorker.register();
+serviceWorker.register();
