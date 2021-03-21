@@ -4,6 +4,7 @@ import {Url} from '../../Url';
 import { useCookies } from 'react-cookie';
 import usericon from './user.png'
 import Row from 'react-bootstrap/Row'
+import {encode} from '../../Utils'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import axios from 'axios';
@@ -79,8 +80,8 @@ function Login({setauthpage}) {
           {
             const user = {
                 
-                role: response.data.data.role,
-                email: response.data.data.email,
+                role: response.data.token,
+                email: response.data.token,
                 id: response.data.data._id,
                 personalDetails:response.data.data.personalDetails,
                 token:response.data.token

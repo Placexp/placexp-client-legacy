@@ -5,6 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {Url} from '../Url';
+import companyL from './companyJ.json';
 import Select from 'react-select';
 import  FormData from 'form-data';
 import Header from '../Component/Layout/Header';
@@ -17,16 +18,7 @@ const [fname,setFName]=useState('');
 const [link,setLink]=useState('');
 const [company,setCompany]=useState('');
 const [cookies, setCookie] = useCookies(['user']);
-if(cookies.user==null)history.push("/auth")
-const companyL = [
-  { label: 'SCE', value: 'SCE' },
-  { label: 'SCOPE', value: 'SCOPE' },
-  { label: 'SELECT', value: 'SELECT' },
-  { label: 'SENSE', value: 'SENSE' },
-  { label: 'VFIT', value: 'VFIT' },
-  { label: 'SMEC', value: 'SMEC' },
-  { label: 'ALL', value: 'ALL' }
-];
+
 
     const handleSubmit=async(e)=>
     {
@@ -39,7 +31,7 @@ const response= await axios({
   data:{
     title:title,
     subject:sub,
-   company:company,
+   company:company.value,
    link:link,
    
   }
@@ -120,8 +112,27 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Company</label>
     <div class="col-sm-10">
-      <input type="text"  value={company} onChange={e=>setCompany(e.target.value)} class="form-control" id="inputPassword"/>
-    </div>
+    <Select
+                    placeholder="Select"
+                    value={company} 
+                    onChange={option => setCompany(option)}
+                    options={companyL}
+                    isSearchable
+                    required
+                />
+            {(
+            <input
+              tabIndex={-1}
+              autoComplete="off"
+              style={{ opacity: 0, height: 0 }}
+              value={company}
+
+              required
+            />
+            )}
+      
+      
+   </div>
   </div>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Video</label>

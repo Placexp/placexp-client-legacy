@@ -16,9 +16,9 @@ const Auth = ({ defaultRoutine = 'login' }) => {
                 removeCookie('user', null, { maxAge: 0 });
              
                 dispatch({ type: 'LOGOUT_USER' });
-        
+                return <Redirect to="/" />;
               }
-        return <Redirect to="/" />;
+              return <Redirect to="/" />;
         }
         switch (authpage) {
             case 'signup':
