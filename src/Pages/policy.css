@@ -1,0 +1,12 @@
+.content {
+    padding: 30px 10%;
+    line-height: 2;
+}
+.display-4 {
+    text-align: center;
+}
+.lead {
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 25px;
+}
