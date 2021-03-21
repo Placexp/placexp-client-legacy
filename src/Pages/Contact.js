@@ -4,50 +4,49 @@ import {Link} from 'react-router-dom';
 import logo from '../assets/Images/logo-black.png'
 import { useCookies } from 'react-cookie';
 import io from "socket.io-client";
+import axios from 'axios';
 import Context from '../context';
+import Swal from 'sweetalert2';
 import './Contact.css';
+import {Url} from '../Url';
 let socket;
 const ENDPOINT = 'http://localhost:5000/';
 const Contact=({location})=>{
   const [name, setName] = useState('d');
   const [room, setRoom] = useState('dd');
-  const [users, setUsers] = useState('');
+  const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'http://localhost:5000/';
-
-const postid="2";
-  useEffect(() => {
-    
   
-    socket = io(ENDPOINT);
-
-    setRoom(room);
-    setName(name)
-
-    socket.emit('join', { postid }, (error) => {
-      if(error) {
-        alert(error);
-      }
-    });
-  }, [ENDPOINT, location.search]);
-  
-  useEffect(() => {
-    socket.on('message', message => {
-      setMessages(message.data);
-     
-    });
-    
-    
-}, []);
-
-  const sendMessage = (event) => {
+  const sendMessage = async (event) => {
+    try
+{
     event.preventDefault();
 
-    if(message) {
-      socket.emit('sendMessage', message, () => setMessage(''));
-    console.log(messages);
-    }
+  const response= await axios({
+    method: 'post',
+    withCredentials: true,
+    url: Url()+"/contact",
+    data:{
+        email:email,
+        subject:message
+    }})
+    Swal.fire({
+       
+      title: 'Success',
+      text: 'Query registered . Our content team will contact you . Stay Tuned. ',
+      imageUrl:"https://imgur.com/MiIjgkr.jpg",
+      imageWidth: "50px",
+      imageHeight:"50px",
+      type: 'success',
+      confirmButtonText: 'Okay'
+    });
+}
+catch(ERR)
+{
+
+}
+   
   }
   const [cookies, setCookie] = useCookies(['user']);
   const { State, dispatch } = useContext(Context);
@@ -91,7 +90,7 @@ return (
             <div class="col-6">
               <label for="validationCustomUsername" class="form-label"><p class="lead">Username</p></label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
+                <input type="email" value={email} onChange={e=>setEmail(e.target.value)} class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
                 <div class="invalid-feedback">
                   Please choose a username.
                 </div>
@@ -115,9 +114,7 @@ return (
 
     </div>
   </div>
-  <div>
-    {messages.map((e)=>(<p>{e.subject}</p>))}
-  </div>
+
 </div>
 );
 
