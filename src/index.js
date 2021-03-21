@@ -34,6 +34,7 @@ const SignupC = React.lazy(() => import('./Pages/SignupC'));
 const Profile = React.lazy(() => import('./Pages/Profile'));
 const Interview = React.lazy(() => import('./Pages/Interview'));
 const Interviewsp = React.lazy(() => import('./Pages/Interviewsp'));
+const Policy = React.lazy(() => import('./Pages/Policy'));
 const Interviewct = React.lazy(() => import('./Pages/Interviewct'));
 const InterviewApprove = React.lazy(() => import('./Pages/InterviewApprove'));
 const Interviewed = React.lazy(() => import('./Pages/Interviewed'));
@@ -60,6 +61,7 @@ catch(err)
         <Switch>
           <Route exact path="/" component={withRouter(Home)} />
           <Route path="/auth" component={withRouter(Auth)} />
+          <Route path="/policy" component={withRouter(Policy)} />
           <Route path="/events" component={withRouter(Events)} />
           <Route path="/contact" component={withRouter(Contact)} />
           <Route path="/doubt" component={withRouter(Doubt)} />

@@ -52,7 +52,6 @@ useEffect(async() => {
         <Header/>
     <br/><br/>
     
-    
         <div class="container-fluid gedf-wrapper">
             <div class="row">
                 <div class="col-md-4">
@@ -92,7 +91,9 @@ useEffect(async() => {
                        
                     </div>
                  <center>
-                 <iframe width="560" height="315" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                 <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+               <br/>
                 </div>
                 <Disqus.DiscussionEmbed
           shortname={disqusShortname}
