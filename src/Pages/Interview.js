@@ -112,7 +112,7 @@ Loading
                     </div>
                   </div>
                
-                )):"No Result Found . Write us at placexp@gmail.com"}
+                )):"Loading....."}
             </div>
           </div>
         </div>
