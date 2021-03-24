@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Context from "../../context";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../../assets/Images/logo.png";
+import logo from "../../assets/Images/logo-purple.png";
 import { useCookies } from "react-cookie";
 import "./Header.css";
 import {decode} from '../../Utils'
