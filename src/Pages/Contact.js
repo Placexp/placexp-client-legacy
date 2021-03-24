@@ -53,35 +53,7 @@ catch(ERR)
 return (
 <div>
   <div class="top">
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand"><img src={logo} height="70px" align="left"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Interviews</a>
-              <div class="dropdown-menu">
-                {State.isAuth && cookies.user.role ==='A'&& <Link className="dropdown-item" to="/interview_create">Add Interviews</Link>}
-                {State.isAuth && cookies.user.role ==='A'&& <Link className="dropdown-item" to="/verifyinterview">Verify Interviews</Link>}
-                <Link className=" dropdown-item" to="/interview">View Interviews</Link>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Contact">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              {State.isAuth && cookies.user.role ==='A'&& (<Link className="nav-link" to="/logout"><font color="red"><i class="fas fa-power-off"></i></font></Link>)}
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+      <Header />
       <div class="container2">
         <div class="row no-gutters">
         <Jumbotron class="main">
