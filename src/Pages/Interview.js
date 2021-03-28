@@ -97,7 +97,7 @@ Loading
 
           <div className="Int__section">
             <div className="interviews">
-              {result.length>0?result.map((item)=>(
+              {isLoading?'Loading....':(result.length>0?result.map((item)=>(
                
                
                   <div className="Int__card" onClick={e=>goToEvent(item._id)}>
@@ -112,7 +112,7 @@ Loading
                     </div>
                   </div>
                
-                )):"No Result Found . Write us at placexp@gmail.com"}
+                )):"No result found try again.")}
             </div>
           </div>
         </div>
