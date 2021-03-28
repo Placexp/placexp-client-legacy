@@ -1,0 +1,17 @@
+.right_col {
+    background: #EAEBFD;
+    border-radius: 2%;
+    
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+  .b_color{
+      background: #D8D9F5;
+  }
+  span {
+    margin-bottom: 6px;
+    color: #2b6dad;
+  }
+  span:hover{
+     text-decoration: underline;
+  }

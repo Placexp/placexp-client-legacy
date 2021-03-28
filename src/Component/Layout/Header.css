@@ -23,3 +23,12 @@
     bottom: 5px;
     margin-top: 5px;
   }
+
+@media screen and (max-width: 575px) {
+    .navbar {
+      padding-left: 0;
+    }
+    .navbar-nav {
+      padding-right: 0;
+    }
+  }
