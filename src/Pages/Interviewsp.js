@@ -53,8 +53,7 @@ const articles =[{title:"Amazon Interview Experience For Software Developer Inte
 
     <div >
         <Header/>
-   
-    
+
         <div class="container-fluid gedf-wrapper">
             <div class="row  b_color">
             <div class="col-md-8 gedf-main right_col m-3 p-3">
@@ -82,9 +81,10 @@ const articles =[{title:"Amazon Interview Experience For Software Developer Inte
                         </p>
                        
                     </div>
+                   
                  <center>
-                 <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 <iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+             {event[0].videoLink &&   ( <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)}
+               { event[0].videoLink && (<iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)}</center>
                <br/>
                 </div>
                 <Disqus.DiscussionEmbed

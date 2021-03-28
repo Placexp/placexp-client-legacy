@@ -34,7 +34,7 @@ const Home = () => {
                     academic and placement information of Vellore Institute of
                     Technology, Chennai.
                   </p>
-                  <a
+                 {! cookies.user && (<><a
                     class="sign1 btn btn-outline-primary btn-lg"
                     href="/auth"
                     role="button"
@@ -47,7 +47,17 @@ const Home = () => {
                     role="button"
                   >
                     Sign Up
-                  </a>
+                  </a></>)}
+                  {cookies.user && (<a
+                    class="sign1 btn btn-outline-primary btn-lg"
+                    href="/Contact"
+                    role="button"
+                  >
+                   Contact Us
+                  </a>)
+
+
+                  }
                 </div>
               </div>
               <br className="d-md-none" />
