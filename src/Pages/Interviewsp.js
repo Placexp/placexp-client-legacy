@@ -51,7 +51,9 @@ useEffect(async() => {
     <div >
         <Header/>
     <br/><br/>
-    
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=213831017165762&autoLogAppEvents=1" nonce="7k9s0JTj"></script>
+<div class="fb-comments" data-href="http://localhost:3000/interview" data-width="" data-numposts="5"></div>
         <div class="container-fluid gedf-wrapper">
             <div class="row">
                 <div class="col-md-4">
@@ -90,9 +92,10 @@ useEffect(async() => {
                         </p>
                        
                     </div>
+                   
                  <center>
-                 <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 <iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+             {event[0].videoLink &&   ( <iframe className="w-75 d-none d-sm-block d-sm-none d-md-block"  height="330px" src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)}
+               { event[0].videoLink && (<iframe className="w-75 d-lg-none"   src={event[0].videoLink} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)}</center>
                <br/>
                 </div>
                 <Disqus.DiscussionEmbed
