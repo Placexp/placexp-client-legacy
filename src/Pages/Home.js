@@ -111,7 +111,7 @@ const Home = () => {
               </div>
             </div>
           </div>
- <h1 class="headingf">Comin Soon</h1>
+ <h1 class="headingf">Coming Soon</h1>
           <div class="feature3">
             <div class="row align-items-center">
               <div class="col-md-5">
