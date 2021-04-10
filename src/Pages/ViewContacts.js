@@ -9,6 +9,7 @@ import "./Interview.css";
 import Swal from "sweetalert2";
 import FuzzySearch from "fuzzy-search";
 import { DropdownButton, Dropdown } from "react-bootstrap";
+
 const ViewContacts = () => {
   const [doubtpage, setdoubtpage] = useState("view");
   const [cookies, setCookie] = useCookies(["user"]);
@@ -19,6 +20,28 @@ const ViewContacts = () => {
     "company",
     "status",
   ]);
+
+  useEffect(async () => {
+    const response = await axios({
+      method: "get",
+      withCredentials: true,
+      url:
+        Url() +
+        "/admin/contact?id=" +
+        cookies.user.id +
+        "&role=" +
+        cookies.user.role +
+        "&token=" +
+        cookies.user.token,
+    });
+    if (response.data.code == 400) {
+      console.log(response);
+    } else {
+      console.log(response);
+      setEvent(response.data.data);
+      setLoading(false);
+    }
+  }, [isLoading]);
   const [search, setSearch] = useState("");
   const result = fuzzySearcher.search(search);
 
@@ -29,14 +52,14 @@ const ViewContacts = () => {
   const VeriyEvents = () => {
     let card = [];
 
-    // for (let i = 0; i < result.length; i++) {
-    card.push(
-      <tr>
-        <td data-title="Username">Sample name</td>
-        <td data-title="Message">Sample long text message</td>
-      </tr>
-    );
-    // }
+    for (let i = 0; i < result.length; i++) {
+      card.push(
+        <tr>
+          <td data-title="Username">{result[i].name}</td>
+          <td data-title="Message">{result[i].subject}</td>
+        </tr>
+      );
+    }
     return card;
   };
 
