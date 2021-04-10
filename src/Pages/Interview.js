@@ -55,7 +55,13 @@ const Interview = () => {
     return ans;
   };
   const history = useHistory();
-  
+  const AllTags=value=>{
+    var tag=[];
+    var t=value.split(",");
+    for(let i=0;i<t.length;i++)
+    tag.push(<div className="tag">{t[i]}</div>)
+    return tag
+  }
   const goToEvent = i => {
 
     history.push("/interview/" + i);
@@ -107,7 +113,10 @@ Loading
                       <div className="Int__tag">
                         
                         <div className="tag">{item.company}</div>
-                        
+                        {
+
+                       AllTags(item.tags)
+                        }
                       </div>
                     </div>
                   </div>
