@@ -11,15 +11,18 @@ import  FormData from 'form-data';
 import Header from '../Component/Layout/Header';
 import { useCookies } from 'react-cookie';
 import "./Button.css"
+const jwt    = require('jsonwebtoken')
 const Interviewct=({history})=>{
 
 const [sub,setSub]=useState('');
 const [fname,setFName]=useState('');
 const [link,setLink]=useState('');
 const [company,setCompany]=useState('');
+const [tag,setTag]=useState('');
 const [cookies, setCookie] = useCookies(['user']);
 
-
+if(cookies.user==null || jwt.verify(cookies.user.role,"placexp@123").role!="A")
+history.push("/auth")
     const handleSubmit=async(e)=>
     {
       try{
@@ -33,12 +36,13 @@ const response= await axios({
     subject:sub,
    company:company.value,
    link:link,
+   tag:tag
    
   }
 });
 console.log(response);
 setLink('');
-setTitle('');setSub('');setCompany('');setFName('');
+setTitle('');setSub('');setCompany('');setFName('');setTag('');
 
 Swal.fire({
        
@@ -107,7 +111,12 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
     <ReactQuill value={sub} onChange={setSub} theme="snow"/>
     </div>
   </div>
-  
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Tags</label>
+    <div class="col-sm-10">
+      <input type="text"  value={tag} onChange={e=>setTag(e.target.value)} class="form-control" id="inputPassword"/>
+    </div>
+  </div>
   
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Company</label>

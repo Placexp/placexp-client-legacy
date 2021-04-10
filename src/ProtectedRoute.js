@@ -15,7 +15,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       render={props =>
-        check=='n' ? <Redirect to="/logout" /> : <Component {...props} />
+        check=='n' ? <Redirect to="/auth" /> : <Component {...props} />
       }
       {...rest}
     />
