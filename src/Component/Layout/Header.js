@@ -71,6 +71,11 @@ const Header = () => {
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/Policy">
+              Terms of Use 
+            </a>
+          </li>
+          <li class="nav-item">
             {cookies.user  && (
               <Link className="nav-link" to="/logout">
                 <font color="red">
