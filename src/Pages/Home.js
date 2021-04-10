@@ -74,35 +74,15 @@ const Home = () => {
 
         <div class="features">
           <h1 class="headingf">Features</h1>
-          <div class="feature1">
-            <div class="row align-items-center">
-              <div class="col-md-5">
-                <img class="imagesl" src={feature1} />
-              </div>{" "}
-              <br className="d-md-none" />
-              <br className="d-md-none" />
-              <div class="col-md-7">
-                <div class="jumbotron">
-                  <h1 class="heading">Up-to-Date Information</h1>
-                  <p class="lead">
-                    Keeps you vigilant about the latest events and placement
-                    scenarios for different companies. The data is frequently
-                    updated to match the latest trends in the society.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        
 
           <div class="feature2">
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="jumbotron">
-                  <h1 class="heading">State-of-the-Art Design</h1>
+                  <h1 class="heading"> Interview Experience</h1>
                   <p class="lead">
-                    User-friendly and organised to the core while not
-                    compromising on the classiness. Let's just say it's modern
-                    and elegant, like you.
+                   A complete collection of interviews from formerly placed students to ease your placement journey 
                   </p>
                 </div>
               </div>{" "}
@@ -113,7 +93,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-
+ <h1 class="headingf">Coming Soon</h1>
           <div class="feature3">
             <div class="row align-items-center">
               <div class="col-md-5">
@@ -123,11 +103,10 @@ const Home = () => {
               <br className="d-md-none" />
               <div class="col-md-7">
                 <div class="jumbotron">
-                  <h1 class="heading">Socially Connected</h1>
+                  <h1 class="heading">DSPACE</h1>
                   <p class="lead">
-                    Lets you know the opinions and comments your colleagues have
-                    on an event or company and allows you to freely discuss your
-                    opinion.
+                   Past years question papers , reference materials and what not!!!
+Anything and Everything of your courses !!
                   </p>
                 </div>
               </div>
