@@ -14,6 +14,7 @@ const Interviewsp = (props) => {
 const [isLoading,setLoading]=useState(true);
 const [event,setEvent]=useState([]);
 const [cookies, setCookie] = useCookies(['user']);
+
 const disqusShortname = "placexp-2"
 const disqusConfig = {
   url: "https://placexp.netlify.app/interview",
@@ -47,8 +48,8 @@ useEffect(async() => {
  , [isLoading]);
 
 // fake articles arrray
-const articles =[{title:"Amazon Interview Experience For Software Developer Intern"},{title:"Minimum number of pigs required to find the poisonous bucket"},
-                         {title:"Amazon Interview Experience for SWE Summer Internship 2021"},{title:"Amazon Interview Experience for SDE Internship (On-Campus)"}]
+const articles =[{title:"JP Morgan Interview Experience",link:"https://placexp.tech/interview/6071cd64229d520024fd42c3"},{title:"Deloitte Interview Experience",link:"https://placexp.tech/interview/6071fe7e0fdbee0024d3449c"},
+                         {title:"Philips Interview Experience",link:"https://placexp.tech/interview/6071fe7e0fdbee0024d3449c"},{title:"SAP Interview Experience",link:"https://placexp.tech/interview/6071cfa7229d520024fd42c4"}]
  return (
 
     <div >
@@ -110,7 +111,7 @@ const articles =[{title:"Amazon Interview Experience For Software Developer Inte
                         <h4 style={{color:"#2b6dad"}}>Related Articles</h4> 
                         <hr style={{marginTop:"0"}}/>
                         {articles.map(article=>{
-                            return <span>{article.title}</span>
+                            return <span><a target="_blank" href={article.link}>{article.title}</a></span>
                         })}
                      </div>
                 </div>
