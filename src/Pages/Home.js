@@ -126,11 +126,9 @@ Anything and Everything of your courses !!
                 <p class="lead ">Contact Us</p>
 
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <a type="button" class="btn btn-outline-light btn-lg">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                  <a type="button" class="btn btn-outline-light btn-lg">
-                    <i class="fab fa-facebook-f"></i>
+              
+                  <a type="button" href="https://www.youtube.com/channel/UC3APG4AIn5H7PK4opSid_Vw" class="btn btn-outline-light btn-lg">
+                    <i class="fab fa-youtube"></i>
                   </a>
                   <a
                     type="button"
