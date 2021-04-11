@@ -59,7 +59,10 @@ const Interview = () => {
     var tag=[];
     var t=value.split(",");
     for(let i=0;i<t.length;i++)
+    {
+      if(t[i]!='')
     tag.push(<div className="tag">{t[i]}</div>)
+    }
     return tag
   }
   const goToEvent = i => {
