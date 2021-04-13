@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import usericon from '../Component/Auth/user.png'
 import Header from "../Component/Layout/Header";
-import '../Component/Auth/register.css';
 import Swal from 'sweetalert2';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
