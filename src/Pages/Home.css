@@ -162,6 +162,8 @@
     text-align: center;
     padding-top: 0;
   }
+  .headingf {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 450px) {
