@@ -88,7 +88,7 @@ return (
           <h1 class="display-4">CONTACT US</h1>
           <form class="row g-3 needs-validation" novalidate onSubmit={sendMessage}>
             <div class="col-6">
-              <label for="validationCustomUsername" class="form-label"><p class="lead">Username</p></label>
+              <label for="validationCustomUsername" class="form-label"><p class="lead">Email</p></label>
               <div class="input-group has-validation">
                 <input type="email" value={email} onChange={e=>setEmail(e.target.value)} class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
                 <div class="invalid-feedback">
