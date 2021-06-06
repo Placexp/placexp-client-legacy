@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Header from '../Component/Layout/Header';
 
-const hackathonct = () => {
+const Hackathonct = () => {
     return (
         <div>
             <Header />
