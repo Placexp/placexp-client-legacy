@@ -122,8 +122,8 @@ setSubmitting(false);
        
     }
     return (
-        
-       <Container id="login">
+       <div className="wrapper">
+         <Container id="login">
           <Row>
               <Col id="login1">
               <h1>Welcome Back!</h1>
@@ -144,8 +144,8 @@ setSubmitting(false);
                 <h4  id="link" onClick={()=>setauthpage("forgot") } style={{color:":#834F80"}}>Forgot Password?</h4>
                 <h4>Not Registered yet?<a id="link" onClick={()=>setauthpage("signup")} style={{color:":#834F80"}}>Sign up</a></h4>
                 <button> {submitting?( <div>Loading  <div class="spinner-border " role="status">
-  <span class="sr-only">Loading...  </span>
-</div></div>):'Next'}  </button>
+                <span class="sr-only">Loading...  </span>
+                </div></div>):'Next'}  </button>
             </form>
             ):
             ( <form className="login_form" onSubmit={handlesubmit}>
@@ -156,8 +156,8 @@ setSubmitting(false);
              <h4  id="link" onClick={()=>setauthpage("forgot") } style={{color:":#834F80"}}>Forgot Password?</h4>
              <h4>Not Registered yet?<a id="link" onClick={()=>setauthpage("signup")} style={{color:":#834F80"}}>Sign up</a></h4>
              <button>{submitting?( <div>Loading  <div class="spinner-border " role="status">
-  <span class="sr-only">Loading...  </span>
-</div></div>):'Login'}</button><button onClick={()=>setBack(true)}>Back</button> 
+            <span class="sr-only">Loading...  </span>
+            </div></div>):'Login'}</button><button onClick={()=>setBack(true)}>Back</button> 
          </form>)}
               </Container>
              
@@ -165,6 +165,8 @@ setSubmitting(false);
           </Row>
           
         </Container>
+       </div> 
+       
         
         
     )
