@@ -78,14 +78,14 @@ const handleSubmit=async(e)=>{
     try{
     e.preventDefault();
     setSubmitting(true);
-    const response=await axios({
-      method: 'get',
-      url: Url()+'/refer?id='+user.code,
+    // const response=await axios({
+    //   method: 'get',
+    //   url: Url()+'/refer?id='+user.code,
       
-    });
+    // });
     
-    if(response.data.msg=="next")
-    {
+    // if(response.data.msg=="next")
+    // {
     if(conpasswd==user.password)
     {
    
@@ -135,19 +135,19 @@ else
         confirmButtonText: 'Please try Again'
       });
 }
-    }
-    else
-    {
+    
+    // else
+    // {
       
-    Swal.fire({
+    // Swal.fire({
         
-      title: 'Error',
-      text: 'Invalid Code ',
-      type: 'error',
-      icon:'error',
-      confirmButtonText: 'Please try Again'
-    });
-    }
+    //   title: 'Error',
+    //   text: 'Invalid Code ',
+    //   type: 'error',
+    //   icon:'error',
+    //   confirmButtonText: 'Please try Again'
+    // });
+    // }
       setSubmitting(false);
     }
     catch(err)
@@ -197,7 +197,8 @@ return (
             <br/>
             <input required type="text"  value={user.program} onChange={e=>setuser({...user,program:e.target.value})} placeholder="Enter your program" /  >
             <input required type="text"  value={user.branch} onChange={e=>setuser({...user,branch:e.target.value})} placeholder="Enter your branch" /  >
-            <input required type="text"  value={user.code} onChange={e=>setuser({...user,code:e.target.value})} placeholder="Enter your Referral Code" /  >
+           { //<input required type="text"  value={user.code} onChange={e=>setuser({...user,code:e.target.value})} placeholder="Enter your Referral Code" /  >
+           }
            
            <input required type="password" value={user.password} onChange={e=>setuser({...user,password:e.target.value})} placeholder="Enter your password"/>
             

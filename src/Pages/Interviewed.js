@@ -20,7 +20,7 @@ const [link,setLink]=useState('');
 const [company,setCompany]=useState('');
 const[isLoading,setLoading]=useState(true);
 const [cookies, setCookie] = useCookies(['user']);
-
+const [tag,setTag]=useState('');
 const companyL = [
   { label: 'SCE', value: 'SCE' },
   { label: 'SCOPE', value: 'SCOPE' },
@@ -51,6 +51,7 @@ useEffect(async() => {
    setLink(response.data.data[0].videoLink);
    setTitle(response.data.data[0].postTitle);
    setSub(response.data.data[0].postBody);
+   setTag(response.data.data[0].tags)
    setLoading(false)
 }
  }, [isLoading]);
@@ -75,6 +76,7 @@ const response= await axios({
     subject:sub,
    company:company,
    link:link,
+   tag:tag,
    i:props.match.params.id
    
   }
@@ -129,6 +131,12 @@ return (<div  className="card  w-100 h-100  px-6 p-4  ">
     <label for="staticEmail" class="col-sm-2 col-form-label">Company</label>
     <div class="col-sm-10">
       <input type="text"  value={company} onChange={e=>setCompany(e.target.value)} class="form-control" id="inputPassword"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Tags</label>
+    <div class="col-sm-10">
+      <input type="text"  value={tag} onChange={e=>setTag(e.target.value)} class="form-control" id="inputPassword"/>
     </div>
   </div>
   <div class="form-group row">
