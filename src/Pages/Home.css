@@ -1,8 +1,8 @@
-#Home{
+#Home {
   overflow: hidden;
 }
 .top {
-  background-color: #eaebfd; 
+  background-color: #eaebfd;
 }
 .topmost {
   background-color: #d8d9f5;
@@ -79,6 +79,11 @@
   margin-left: 0px;
   padding-top: 90px;
 }
+.feature4 .jumbotron {
+  background-color: white;
+  margin-left: 0px;
+  padding-top: 90px;
+}
 .display-3 {
   text-align: center;
 }
@@ -90,38 +95,42 @@
   background: #2b252c;
   color: #fff;
 }
-  .footer header {
-    text-align: center;
-    cursor: default;
-  }
+.footer header {
+  text-align: center;
+  cursor: default;
+}
 
-  .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
-    color: #fff;
-  }
+.footer h2,
+.footer h3,
+.footer h4,
+.footer h5,
+.footer h6 {
+  color: #fff;
+}
 
-  .footer .contact {
-    text-align: center;
-  }
+.footer .contact {
+  text-align: center;
+}
 
-    .footer .contact p {
-      text-align: center;
-      margin: 0 0 3em 0;
-    }
+.footer .contact p {
+  text-align: center;
+  margin: 0 0 3em 0;
+}
 
 .heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 50px;
   font-weight: 300;
 }
 .headingf {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 50px;
   font-weight: 300;
   margin-top: 20px;
 }
 
 @media screen and (max-width: 500px) {
-  .navbar{
+  .navbar {
     padding-left: 20px;
   }
   .container2 .jumbotron {
