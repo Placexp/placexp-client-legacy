@@ -87,14 +87,26 @@ const Header = () => {
               )}
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              href="/#"
+            >
+              Mock Interviews
+            </a>
+            <div class="dropdown-menu">
+              <Link className=" dropdown-item" to="/mockinterview">
+                View Mock Interviews
+              </Link>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/Contact">
               Contact Us
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Policy">
-              Terms of Use 
             </a>
           </li>
           <li class="nav-item">
