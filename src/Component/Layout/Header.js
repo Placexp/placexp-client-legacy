@@ -65,6 +65,28 @@ const Header = () => {
               </Link>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              href="/#"
+            >
+              Hackathons
+            </a>
+            <div class="dropdown-menu">
+              <Link className=" dropdown-item" to="/hackathon">
+                View Hackathons
+              </Link>
+              {State.isAuth && role=== "A" && (
+                <Link className="dropdown-item" to="/hackathon_create">
+                  Add Hackathons
+                </Link>
+              )}
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/Contact">
               Contact Us
