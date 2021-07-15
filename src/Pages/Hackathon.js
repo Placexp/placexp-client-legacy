@@ -35,18 +35,18 @@ const Hackathon = () => {
     setLoading(false);
   }, [isLoading]);
   const [hackathon, setHackathon] = useState([]);
-  const fuzzySearcher = new FuzzySearch(hackathon, ["postTitle", "company"]);
+  const fuzzySearcher = new FuzzySearch(hackathon, ["postTitle", "hackathonOrganizer.label"]);
   const [search, setSearch] = useState("");
   const result = fuzzySearcher.search(search);
   const dropDown = () => {
     let ls = [];
     let ans = [];
     for (let i = 0; i < hackathon.length; i++) {
-      if (ls.indexOf(hackathon[i].company) == -1) {
-        ls.push(hackathon[i].company);
+      if (ls.indexOf(hackathon[i].hackathonOrganizer.label) == -1) {
+        ls.push(hackathon[i].hackathonOrganizer.label);
         ans.push(
-          <Dropdown.Item eventKey={hackathon[i].company}>
-            {hackathon[i].company}
+          <Dropdown.Item eventKey={hackathon[i].hackathonOrganizer.label}>
+            {hackathon[i].hackathonOrganizer.label}
           </Dropdown.Item>
         );
       }
@@ -64,7 +64,7 @@ const Hackathon = () => {
     return tag;
   };
   const goToEvent = (i) => {
-    history.push("/hackathon/" + i);
+    window.location.href = i;
   };
   const handleSelect = (e) => {
     setSearch(e);
@@ -101,9 +101,6 @@ const Hackathon = () => {
                 ) : (
                   dropDown()
                 )}
-                <Dropdown.Item>Google</Dropdown.Item>
-                <Dropdown.Item>Dropbox</Dropdown.Item>
-                <Dropdown.Item>TechCrunch</Dropdown.Item>
               </DropdownButton>
             </div>
           </div>
@@ -117,7 +114,7 @@ const Hackathon = () => {
                     <div
                       className="Hackathon__card"
                       onClick={(e) => {
-                        goToEvent(item._id);
+                        goToEvent(item.hackathonLink);
                         console.log(item);
                       }}
                     >
@@ -126,8 +123,9 @@ const Hackathon = () => {
                       <div className="tag__area">
                         <h3 className="Hackathon__tag tag__header">tags: </h3>
                         <div className="Hackathon__tag">
-                          <div className="tag">{item.company}</div>
-                          {AllTags(item.tags)}
+                          {AllTags(item.tags).map(i => (
+                            <div className="tag">{i}</div>
+                          ))}
                         </div>
                       </div>
                     </div>

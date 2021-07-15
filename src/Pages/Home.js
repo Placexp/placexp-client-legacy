@@ -140,12 +140,12 @@ const Home = () => {
         <div class="footer ">
           <div class="container">
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-12">
                 <header>
                   <h1 class="final heading ">Having unresolved queries?</h1>
                 </header>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-12 contactus">
                 <p class="lead ">Contact Us</p>
 
                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -171,6 +171,9 @@ const Home = () => {
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </div>
+              </div>
+              <div class="col-md-12 TermsofUse">
+                  <a href="/Policy">Terms of Use</a>
               </div>
             </div>
           </div>
