@@ -1,0 +1,16 @@
+.mcq_wrapper {
+  background: #d8d9f5;
+}
+
+.container {
+  background: rgb(234, 235, 253);
+  
+  border-radius: 15px;
+  padding-top: 20px;
+  
+}
+
+.ques {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

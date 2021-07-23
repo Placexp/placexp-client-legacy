@@ -42,6 +42,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-select": "^3.1.1",
+    "react-tooltip": "^4.2.21",
     "serve": "^11.3.2",
     "socket.io-client": "^2.3.0",
     "styled-components": "^5.2.1",

@@ -40,6 +40,7 @@ const InterviewApprove = React.lazy(() => import('./Pages/InterviewApprove'));
 const Interviewed = React.lazy(() => import('./Pages/Interviewed'));
 const Hackathon = React.lazy(() => import('./Pages/Hackathon'));
 const Hackathonct = React.lazy(() => import('./Pages/Hackathonct'));
+const McqQues  = React.lazy(()=>import('./Component/Questions/Mcq'))
 const Root = () => {
   const initialState = useContext(Context);
   const [State, dispatch] = useReducer(reducer, initialState);
@@ -72,6 +73,7 @@ catch(err)
           <Route path="/details/:id" component={withRouter(Eventsp)} />
           <Route path="/verify" component={withRouter(ApproveEvent)} />
           <Route path="/profile" component={withRouter(Profile)} />
+          <Route path="/mcq" component={withRouter(McqQues)} />
           <Route path="/signup/club/:id" component={withRouter(SignupC)} />
          
           <ProtectedRoute path="/interview_create" component={withRouter(Interviewct)} />
