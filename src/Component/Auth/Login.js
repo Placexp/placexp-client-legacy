@@ -48,7 +48,7 @@ function Login({setauthpage}) {
             Swal.fire({
                 
                 title: 'Error',
-                text: 'Email Dont Exists',
+                text: "This email doesn't exist",
                 type: 'error',
                 icon:'error',
                 confirmButtonText: 'Please try Again'
@@ -97,7 +97,7 @@ function Login({setauthpage}) {
             Swal.fire({
             
                 title: 'Error',
-                text: 'Invalid Password and Email Combination',
+                text: "You have entered an invalid email and password combination",
                 type: 'error',
                 icon:'error',
                 confirmButtonText: 'Please try Again'

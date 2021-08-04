@@ -38,6 +38,9 @@ const Policy = React.lazy(() => import('./Pages/Policy'));
 const Interviewct = React.lazy(() => import('./Pages/Interviewct'));
 const InterviewApprove = React.lazy(() => import('./Pages/InterviewApprove'));
 const Interviewed = React.lazy(() => import('./Pages/Interviewed'));
+const Hackathon = React.lazy(() => import('./Pages/Hackathon'));
+const Hackathonct = React.lazy(() => import('./Pages/Hackathonct'));
+const Mockinterview = React.lazy(() => import('./Pages/Mockinterview'));
 const Root = () => {
   const initialState = useContext(Context);
   const [State, dispatch] = useReducer(reducer, initialState);
@@ -77,6 +80,11 @@ catch(err)
           <ProtectedRoute path="/interview_edit/:id" component={withRouter(Interviewed)} />
           <Route path="/interview" component={withRouter(Interview)} />
           <ProtectedRoute path="/verifyinterview" component={withRouter(InterviewApprove)} />
+                                                             
+          <Route path="/hackathon" component={withRouter(Hackathon)} />
+          <Route path="/hackathon_create" component={withRouter(Hackathonct)} />
+                                                     
+          <Route path="/mockinterview" component={withRouter(Mockinterview)} />
           <Route
               path="/logout"
               render={rProps => <Auth {...rProps} defaultRoutine="logout" />}

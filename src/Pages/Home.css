@@ -129,6 +129,20 @@
   margin-top: 20px;
 }
 
+.contactus {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.TermsofUse {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.TermsofUse a {
+  color: white !important;
+}
+
 @media screen and (max-width: 500px) {
   .navbar {
     padding-left: 20px;
