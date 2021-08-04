@@ -18,60 +18,60 @@ import "./Button.css";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 
 const Mockinterview = () => {
-//   const [query, updateQuery] = useState("");
-//   const [data, setData] = useState("");
-//   const [isLoading,setLoading]=useState(true);
+  const [query, updateQuery] = useState("");
+  const [data, setData] = useState("");
+  const [isLoading,setLoading]=useState(true);
  
-//   useEffect(async() => {
+  useEffect(async() => {
         
-//     const response= await axios({
-//      method: 'post',
-//      withCredentials: true,
-//      url: Url()+"/post/getall",
-//    });
-//    console.log(response);
-//    setInterview(response.data.data);
+    const response= await axios({
+     method: 'get',
+     withCredentials: true,
+     url: Url()+"/mock/mock",
+   });
+   console.log(response);
+   setMockInterview(response.data.data);
   
   
-//    setLoading(false)
-//  }, [isLoading]);
-//  const [interview ,setInterview]=useState([]);
-//  const fuzzySearcher = new FuzzySearch(interview, ['postTitle','company']);
-//  const [search,setSearch]=useState('');
-//   const result = fuzzySearcher.search(search);
-//   const dropDown=()=>{
-//     let ls=[];
-//     let ans=[];
-//     for(let i=0;i<interview.length;i++)
-//     {
-//       if(ls.indexOf(interview[i].company)==-1)
-//       {
-//         ls.push(interview[i].company);
-//         ans.push( <Dropdown.Item  eventKey={interview[i].company}>
-//         {interview[i].company}
-//       </Dropdown.Item>)
-//       }
-//     }
-//     return ans;
-//   };
-//   const history = useHistory();
-//   const AllTags=value=>{
-//     var tag=[];
-//     var t=value.split(",");
-//     for(let i=0;i<t.length;i++)
-//     {
-//       if(t[i]!='')
-//     tag.push(<div className="tag">{t[i]}</div>)
-//     }
-//     return tag
-//   }
-//   const goToEvent = i => {
+   setLoading(false)
+ }, [isLoading]);
+ const [mockinterview ,setMockInterview]=useState([]);
+ const fuzzySearcher = new FuzzySearch(mockinterview, ["postTitle", "mockTitle"]);
+ const [search,setSearch]=useState('');
+  const result = fuzzySearcher.search(search);
+  const dropDown=()=>{
+    let ls=[];
+    let ans=[];
+    for(let i=0;i<mockinterview.length;i++)
+    {
+      if(ls.indexOf(mockinterview[i].mockTitle)==-1)
+      {
+        ls.push(mockinterview[i].mockTitle);
+        ans.push( <Dropdown.Item  eventKey={mockinterview[i].Organizer}>
+        {mockinterview[i].Organizer}
+      </Dropdown.Item>)
+      }
+    }
+    return ans;
+  };
+  const history = useHistory();
+  const AllTags = (value) => {
+    var tag = [];
 
-//     history.push("/interview/" + i);
-//    };
-//   const handleSelect = (e) => {
-//    setSearch(e)
-//   };
+    var t = value.toString().split(",");
+    for (let i = 0; i < t.length; i++) {
+      if (t[i] != "") tag.push(<div className="tag">{t[i]}</div>);
+    }
+    return tag;
+  };
+
+  const goToEvent = (i) => {
+    window.location.href = window.location.href+ "/" + i;
+  };
+  const handleSelect = (e) => {
+    setSearch(e);
+  };
+  
 
   return (
     <>
@@ -88,8 +88,8 @@ const Mockinterview = () => {
               <label>Search</label>
               <input 
                 type="text"
-                // value={search} 
-                // onChange={e=>setSearch(e.target.value)}
+                value={search} 
+                onChange={e=>setSearch(e.target.value)}
                 />
             </form>
 
@@ -97,14 +97,11 @@ const Mockinterview = () => {
               <DropdownButton
                 id="dropdown-item-button"
                 title="Filter"
-                // onSelect={handleSelect}
+                onSelect={handleSelect}
               >
-               {/* {isLoading?(<Dropdown.Item  eventKey="">
+               {isLoading?(<Dropdown.Item  eventKey="">
                                 Loading
-                           </Dropdown.Item>):dropDown()} */}
-                <Dropdown.Item>Google</Dropdown.Item>
-                <Dropdown.Item>Dropbox</Dropdown.Item>
-                <Dropdown.Item>TechCrunch</Dropdown.Item>
+                           </Dropdown.Item>):dropDown()}
               </DropdownButton>
             </div>
             
@@ -113,16 +110,17 @@ const Mockinterview = () => {
           <div className="Mockinterview__section">
             <div className="mockinterviews">
 
-              {/* {isLoading?'Loading....':(result.length>0?result.map((item)=>(
+              {isLoading?'Loading....':(result.length>0?result.map((item)=>(
                
                
-                  <div className="Int__card" onClick={e=>goToEvent(item._id)}>
-                    <h2 className="Int__name">{item.postTitle}</h2>
+                  <div className="Mockinterview__card" onClick={e=>goToEvent(item._id)}>
+                    <h2 className="Mockinterview__name">{item.mockTitle}</h2>
+                    <h3 className="Mockinterview_body">{item.mockBody}</h3>
                     <div className="tag__area">
-                      <h3 className="Int__tag tag__header">tags: </h3>
-                      <div className="Int__tag">
+                      <h3 className="Mockinterview__tag tag__header">tags: </h3>
+                      <div className="Mockinterview__tag">
                         
-                        <div className="tag">{item.company}</div>
+                        <div className="tag">{item.Organizer}</div>
                         {
 
                        AllTags(item.tags)
@@ -131,41 +129,7 @@ const Mockinterview = () => {
                     </div>
                   </div>
                
-                )):"No result found try again.")} */}
-                
-                <div className="Mockinterview__card" >
-                    <h2 className="Mockinterview__name">Code Jam</h2>
-                    <div className="tag__area">
-                      <h3 className="Mockinterview__tag tag__header">tags: </h3>
-                      <div className="Int__tag">
-                        
-                        <div className="tag">Google</div>
-                        
-                      </div>
-                    </div>
-                </div>
-                <div className="Mockinterview__card" >
-                    <h2 className="Mockinterview__name">Hack Week</h2>
-                    <div className="tag__area">
-                      <h3 className="Mockinterview__tag tag__header">tags: </h3>
-                      <div className="Int__tag">
-                        
-                        <div className="tag">Dropbox</div>
-                        
-                      </div>
-                    </div>
-                </div>
-                <div className="Mockinterview__card" >
-                    <h2 className="Mockinterview__name">Docracy</h2>
-                    <div className="tag__area">
-                      <h3 className="Mockinterview__tag tag__header">tags: </h3>
-                      <div className="Int__tag">
-                        
-                        <div className="tag">TechCrunch</div>
-                        
-                      </div>
-                    </div>
-                </div>
+                )):"No result found try again.")}            
 
             </div>
           </div>

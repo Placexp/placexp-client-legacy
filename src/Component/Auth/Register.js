@@ -49,7 +49,7 @@ const handleEmail=async(e)=>{
         Swal.fire({
             
             title: 'Error',
-            text: 'This email is already registered',
+            text: 'This email has already been registered',
             type: 'error',
             icon:'error',
             confirmButtonText: 'Please try Again'
@@ -61,7 +61,7 @@ const handleEmail=async(e)=>{
       Swal.fire({
             
         title: 'Error',
-        text: 'This email is not VIT email id',
+        text: 'This email id is not the official VIT email id',
         type: 'error',
         icon:'error',
         confirmButtonText: 'Please try Again'
@@ -118,7 +118,7 @@ const handleSubmit=async(e)=>{
     Swal.fire({
        
         title: 'Success',
-        text: 'Registration Successfull',
+        text: 'Registration Successful',
         icon:'success',
         type: 'success',
         confirmButtonText: 'Okay'
@@ -129,7 +129,7 @@ else
     Swal.fire({
         
         title: 'Error',
-        text: 'Password Dont match',
+        text: "The passwords you have entered doesn't match",
         type: 'error',
         icon:'error',
         confirmButtonText: 'Please try Again'
