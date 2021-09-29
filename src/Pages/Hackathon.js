@@ -64,7 +64,7 @@ const Hackathon = () => {
     return tag;
   };
   const goToEvent = (i) => {
-    window.location.href = i;
+    window.open(i, "_blank");
   };
   const handleSelect = (e) => {
     setSearch(e);
