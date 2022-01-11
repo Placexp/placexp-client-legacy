@@ -1,0 +1,159 @@
+.ClubEvent__page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EAEBFD;
+    padding-top: 1rem;
+    width: 100%;
+  }
+  
+  .ClubEvent__container {
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  border: 1px solid #d6dae0;
+  background-color: #D8D9F5;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  min-height: 85vh;
+  min-width: 10vw;
+  }
+  
+  .search__button {
+    background-color: #d6dae0 !important;
+    border-radius: 2px !important;
+    margin-top: 0px !important;
+  }
+  
+  .ClubEvent__heading {
+    padding: 50px;
+    
+    text-align: center;
+  }
+  
+  /* h1 {
+    font-family: sans-serif;
+  }
+  
+  h2 {
+    font-family: sans-serif;
+  } */
+  
+  
+  .search {
+    width: 44vw;
+    padding-bottom: 30px;
+    padding-top: 0px;
+  }
+  
+  form > label {
+    padding: 8px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+  
+  form > input {
+    width: 30vw;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 4px;
+  }
+  
+  .filterDiv{
+    margin-top: 10px;
+  }
+  
+  .search_filter{
+    display: flex;
+    flex-direction: row;
+  }
+  .ClubEvent__section{
+    display: flex;
+  }
+  .ClubEvents {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #d6dae0;
+    background: #EAEBFD;
+    transition: all 125ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    width: 100%;
+    min-width: 50vw;
+  }
+  
+  #dropdown-item-button {
+    margin: 0px;
+    
+  }
+  
+  .ClubEvent__card {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #d6dae0;
+    background: #fff;
+    transition: all 125ms cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    
+  }
+  
+  .ClubEvent__card:hover {
+    box-shadow: 4px 4px lightgray;
+    cursor: pointer;
+  }
+  
+  .ClubEvent__name {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .ClubEvent_body {
+    font-size: 1rem;
+    font-weight: 450;
+  }
+  
+  .ClubEvent__tag {
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    
+  }
+  
+  .tag__area {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+  }
+  
+  .tag__header{
+    /*margin-top: 5px;*/
+  }
+  
+  .tag {
+    border-radius: 15px;
+    border: 1px solid #d6dae0;
+    background: #d6dae0;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  
+  @media only screen and (max-width: 768px) {
+  
+    /* .interviews {
+        border: none;
+    } */
+  
+    .ClubEvent__container {
+        
+        width: 90%;
+    }
+  }
+  
