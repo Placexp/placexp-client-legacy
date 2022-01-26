@@ -103,7 +103,7 @@ const Interview = () => {
             </div>
           </div>
 
-          <div className="Int__section">
+          <div className="Int__section a">
             <div className="interviews">
               {isLoading
                 ? "Loading...."
