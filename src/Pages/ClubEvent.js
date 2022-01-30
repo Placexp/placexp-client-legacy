@@ -13,7 +13,7 @@ function ClubEvent() {
     <>
         <header className='header'>
             <div className='logo-container'>
-                <img src={require("../assets/logo.png")} alt="" />
+                <img src={require("../assets/Images/logo-purple.png")} alt="" />
                 <h2>PlaceXP</h2>
             </div>
 
