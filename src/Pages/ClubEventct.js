@@ -16,7 +16,7 @@ console.log(addClubEvents)
     <>
       <header className='header'>
             <div className='logo-container'>
-                <img src={require("../assets/Images/logo-purple.pngg")} alt="" />
+                <img src={require("../assets/logo.png")} alt="" />
                 <h2>PlaceXP</h2>
             </div>
 
