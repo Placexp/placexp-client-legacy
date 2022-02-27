@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@3wght@200..700&display=swap');
+body{
+    background-color: #E5E5E5;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 40px;
+}
+.logo-container img{
+    height: 60px;
+}
+.logo-container h2{
+    color: #241966;
+    font-size: 25px;
+    font-weight: 900;
+}
+.header-nav-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-nav-links a{
+    font-size: 20px;
+    color: #241966;
+    margin-right: 50px;
+    text-decoration: none;
+    transition: all 1s ease-in-out;
+}
+.mobile-menu{
+    display: none;
+    margin-right: 20px;
+}
+.header-nav-links-mobile{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    position: fixed;
+    background-color: #e5e5e5;
+    top: 0;
+    left: 0;
+}
+.header-nav-links-mobile a{
+    text-decoration: none;
+}
+.header-nav-links .active{
+    background-color: #4434A7;
+    padding: 5px;
+    border-radius: 50px;
+}
+a.active{
+    color: white;
+}
+.header-nav-links-mobile .active{
+    background-color: #4434A7;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+.header-nav-links-mobile a{
+    font-size: 30px;
+    margin-top: 20px;
+}
+.close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    height: 50px;
+    border-radius: 100%;
+}
+.clubEventsct{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.clubEventsct-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+}
+.clubEventsct-container h1{
+    font-size: 40px;
+    font-weight: 800;
+    color: #241966;
+}
+.line-style-ct{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+.add-clubEvents-form{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.add-clubEvents-form div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #241966;
+    font-weight: 600;
+}
+.add-clubEvents-form div label{
+    font-size: 20px;
+}
+.add-clubEvents-form div input{
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.submit-btn{
+    margin-top: 10px;
+    background-color: #241966;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .header-nav-links a{
+        display: none;
+    }
+    .logo-container img{
+        margin-left: -30px;
+    }
+    .logo-container h2{
+        display: none;
+    }
+    .mobile-menu{
+        display: flex;
+        height: 25px;
+    }
+    .clubEvents-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .search{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        width: 80%;
+    }
+    .search-bar{
+        width: 100%;
+    }
+    .clubEvents-card{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .clubEventsct-container h1{
+        font-size: 20px;
+    }
+    .line-style-ct{
+        width: 100px;
+        margin-left: 40px;
+        margin-top: 20px;
+    }
+    .add-clubEvents-form div label{
+        font-size: 15px;
+    }
+    .add-clubEvents-form div label{
+        width: 50%;
+    }
+}
