@@ -1,3 +1,3 @@
 export const Url = () => {
-  return "https://placexp.herokuapp.com";
+  return "https://placexp-tech.herokuapp.com";
 };
