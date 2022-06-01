@@ -24,7 +24,7 @@ const Interview = () => {
 
   useEffect(async () => {
     const response = await axios({
-      method: "post",
+      method: "get",
       withCredentials: true,
       url: Url() + "/post/getall",
     });
